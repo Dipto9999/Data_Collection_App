@@ -40,7 +40,7 @@ print("Final Sum:", combination_function(1,2))
 # Pay attention to this investment function.
 # Relevant to app developed in workshop.
 
-```python
+```
 def investment(principal, interest, year) :
     total_profit = principal * (1 + interest) ** year
     net_profit = total_profit - principal

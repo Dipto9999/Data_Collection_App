@@ -2,7 +2,7 @@
 
 ## Overview
 This folder was generated with the necessary components to develop the app with the use of <b>oTree</b>.
-<b>Windows Powershell</b> was run in the <a href = "../">Head</a> directory of the project with the following commands to test the app. 
+<b>Windows Powershell</b> was run in the <a href = "..">Head</a> directory of the project with the following commands to test the app. 
 
 The following commands were run:
 <ul>
@@ -16,4 +16,4 @@ The following commands were run:
 ## Credit
 Credit should be provided to <b>Simon Frasier University</b> and <b>Professor Farouk Abdul-Salam</b> for providing
 insight into the usage of these tools to create and deploy the app. This was completed as part of an 
-<a href = "https://sites.google.com/view/farouk-abdul-salam/my-teaching-workshop/workshop?authuser=0">online workshop</a>.
+<a href = "https://sites.google.com/view/farouk-abdul-salam/my-teaching-workshop/workshop?authuser=0">Online Workshop</a>.
