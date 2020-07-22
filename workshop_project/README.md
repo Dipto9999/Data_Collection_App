@@ -2,7 +2,7 @@
 
 ## Overview
 This folder was generated with the necessary components to develop the app with the use of <b>oTree</b>.
-<b>Windows Powershell</b> was run in the <a href = "../../Data_Collection_App">Head</a> directory of the project with the following commands to test the app. 
+<b>Windows Powershell</b> was run in the <a href = "https://github.com/Dipto9999/Data_Collection_App">Head</a> directory of the project with the following commands to test the app. 
 
 The following commands were run:
 <ul>
