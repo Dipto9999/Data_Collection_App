@@ -40,7 +40,6 @@ print("Final Sum:", combination_function(1,2))
 # Pay attention to this investment function.
 # Relevant to app developed in workshop.
 
-```
 def investment(principal, interest, year) :
     total_profit = principal * (1 + interest) ** year
     net_profit = total_profit - principal
@@ -53,7 +52,6 @@ def investment(principal, interest, year) :
         statement = "Be Cautious! This is a Ponzi Scheme."
 
     return total_profit, net_profit, statement
-```
 
 # Test if investment function working as intended.
 print("Investment Outcome (Should be Less Interest):", investment(1000, 0.5, 2))

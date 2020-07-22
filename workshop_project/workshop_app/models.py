@@ -10,10 +10,10 @@ from otree.api import (
 )
 
 
-author = 'Your name here'
+author = 'Muntakim Rahman'
 
 doc = """
-Your app description
+Collects User Information to Make Mathematical Decisions
 """
 
 #####################################
@@ -24,6 +24,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     round_1 = 1
     name_developer = "Muntakim Rahman"
+
 #####################################
 # No Subsession in Between Apps. Will be Unattended.
 class Subsession(BaseSubsession):
@@ -32,6 +33,7 @@ class Subsession(BaseSubsession):
 # Not a Group App. Concerns an Individual Making a Decision.
 class Group(BaseGroup):
     pass
+
 #####################################
 # Input that Influences Decision Making.
 class Player(BasePlayer):
