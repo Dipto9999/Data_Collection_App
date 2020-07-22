@@ -6,11 +6,11 @@ This folder was generated with the necessary components to develop the app with 
 
 The following commands were run:
 <ul>
-    <li>```otree startproject workshop_project``` to create the project and Settings file.</li>
-    <li>```n``` when asked to include sample games.</li>
-    <li>```cd workshop_project``` to enter the newly created project directory.</li>
-    <li>```otree startapp workshop_app``` to create the <b>Python</b> and <b>HTML</b> files specific to the app.</li>
-    <li>```otree devserver``` to develop a working version of the app locally.</li>
+    <li><i>otree startproject workshop_project</i> to create the project and Settings file.</li>
+    <li><i>n</i> when asked to include sample games.</li>
+    <li><i>cd workshop_project</i> to enter the newly created project directory.</li>
+    <li><i>otree startapp workshop_app</i> to create the <b>Python</b> and <b>HTML</b> files specific to the app.</li>
+    <li><i>otree devserver</i> to develop a working version of the app locally.</li>
 </ul>
 
 ## Credit
