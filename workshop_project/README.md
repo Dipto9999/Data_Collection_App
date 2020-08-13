@@ -13,7 +13,7 @@ The following commands were run:
     <li><i>otree devserver</i> to develop a working version of the app locally.
         <ul>
             <li>Every time you add a change your <b>oTree</b> database, this reformulates your app.</li>
-            <li>A working local version of your app will run at <u>http://localhost:8000/demo/</u></li>
+            <li>A working local version of your app will run at <i>http://localhost:8000/demo/</i></li>
         </ul>
     </li>
 </ul>
