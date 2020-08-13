@@ -10,8 +10,12 @@ The following commands were run:
     <li><i>n</i> when asked to include sample games.</li>
     <li><i>cd workshop_project</i> to enter the newly created project directory.</li>
     <li><i>otree startapp workshop_app</i> to create the <b>Python</b> and <b>HTML</b> files specific to the app.</li>
-    <li><i>otree devserver</i> to develop a working version of the app locally.</br>
-           Every time you add a change your <b>oTree</b> database, this reformulates your app.</li>
+    <li><i>otree devserver</i> to develop a working version of the app locally.
+        <ul>
+            <li>Every time you add a change your <b>oTree</b> database, this reformulates your app.</li>
+            <li>A working local version of your app will run at <u>http://localhost:8000/demo/</u></li>
+        </ul>
+    </li>
 </ul>
 
 ## Credit
