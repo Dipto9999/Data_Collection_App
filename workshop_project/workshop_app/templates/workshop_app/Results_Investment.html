@@ -1,0 +1,66 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">Investment Results</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <h2>
+        <span class = "secondmost_heading">Investment Calculation :</span>
+    </h2>
+
+    <!-- This empty paragraph is used to put a space in between the headings. -->
+    <p></p>
+
+    <div style = "text-align: center;">
+        <h3>
+            <span class = "regular_block">
+                (Principal Amount) * ( ( 1 + (Interest Rate) ) ^ (Maturity Period) )
+            </span>
+        </h3>
+    </div>
+    
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p>
+
+    <body>
+        <table>
+            <tr>
+                <th><b>Inputs</b></th>
+                <th><b>You Entered</b></th>
+            </tr>
+
+            <!-- The following information is transferred from the pages.py file. -->       
+            <!-- Display the information input by the individual. -->
+            <tr>
+                <td><font color = "black"><b>Principal Amount : </b></font></td>
+                <td><font color = "black"><b>${{ Principal_Amount }}</b></font></td>
+            </tr>    
+            <tr>
+                <td><font color = "black"><b>Interest Rate : </b></font></td>
+                <td><font color = "black"><b>{{ Interest_Rate }}</b></font></td>
+            </tr>    
+            <tr>
+                <td><font color = "black"><b>Maturity Period : </b></font></td>
+                <td><font color = "black"><b>{{ Maturity_Period }} Years</b></font></td>
+            </tr>
+            
+            <!-- Display the final returns of investment. -->
+            <tr>
+                <td><font color = "darkred"><b>Final Returns : </b></font></td>
+                <td><font color = "darkred"><b>${{ Final_Returns }}</b></font></td>
+            </tr>
+        </table>    
+    </body>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}

@@ -1,5 +1,7 @@
-#############
-###NUMERIC###
+###############
+### NUMERIC ###
+###############
+
 integer_a = 1
 print("integer_a is assigned to 1:", integer_a)
 
@@ -21,8 +23,10 @@ print("Division:", float_a)
 integer_f = (integer_a + integer_b) * integer_b
 print("BEDMAS: ", integer_f)
 
-#############
-###STRINGS###
+###############
+### STRINGS ###
+###############
+
 string_a = "MUNTAKIM"
 print("First Name:", string_a)
 

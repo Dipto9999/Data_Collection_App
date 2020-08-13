@@ -1,0 +1,35 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">App Choice</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <h2>
+        <span class = "secondmost_heading">Instruction for App Choice</span>
+    </h2>
+
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p>
+    
+    <div class = "regular_block">
+        <p>
+            <!-- The following information is transferred from the models.py file. -->
+            <u>Hello <b>{{ player.Name_Initials_Consent }}</b>. Please Provide The Following Details :</u>
+                {% formfield player.App_Choice label = "What type of computation do you wish to make? " %}
+                {% formfield player.Education label = "What is your educational background? " %}
+                {% formfield player.Concern label = "What is your current concern in this COVID-19 period? " %}
+        </p>
+    </div>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}

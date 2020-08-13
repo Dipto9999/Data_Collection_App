@@ -1,0 +1,38 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">Formulating Investment Plan</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <h2>
+        <!-- The following information is transferred from the models.py and pages.py files. -->
+        <div style = "text-align: center;">
+            <span class = "secondmost_heading"><b>Advertisement :</b> {{ player.Name_Initials_Consent }},</br></span>
+            <span class = "secondmost_heading">{{ Advert }}</span>
+        </div>
+    </h2>
+
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p>
+        
+    <div class = "regular_block">
+        <p>
+            <u><b>{{ player.Name_Initials_Consent }}</b>, Please Provide Details Regarding Your Investment Plan :</u>
+                {% formfield player.Principal_Amount label = "What is the amount you wish to invest? " %}
+                {% formfield player.Interest_Rate label = "What is the market interest rate in decimals (i.e. 5% translates to 0.05)? " %}
+                {% formfield player.Maturity_Period label = "How many years do you wish to invest for? " %}
+        </p>
+    </div>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}

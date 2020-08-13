@@ -1,0 +1,71 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">Quadratic Calculation Results</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <h2>
+        <span class = "secondmost_heading">Quadratic Equation :</span>
+    </h2>
+
+    <!-- This empty paragraph is used to put a space in between the headings. -->
+    <p></p>
+    
+    <div style = "text-align: center;">
+        <h3>
+            <span class = "regular_block">
+                A*(x^2) + B*(x) + C
+            </span>
+        </h3> 
+    </div>
+
+
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p>
+
+    <body>
+        <table>
+            <tr>
+                <th><b><u>Inputs</u></b></th>
+                <th><b><u>You Entered</u></b></th>
+            </tr>
+
+            <!-- The following information is transferred from the pages.py file. -->       
+            <!-- Display the coefficients input by the individual. -->
+            <tr>
+                <td><font color = "black"><b>A Coefficient : </b></font></td>
+                <td><font color = "black"><b>{{ A_Coefficient }}</b></font></td>
+            </tr>    
+            <tr>
+                <td><font color = "black"><b>B Coefficient : </b></font></td>
+                <td><font color = "black"><b>{{ B_Coefficient }}</b></font></td>
+            </tr>    
+            <tr>
+                <td><font color = "black"><b>C Coefficient : </b></font></td>
+                <td><font color = "black"><b>{{ C_Coefficient }}</b></font></td>
+            </tr>
+            
+            <!-- Display the roots of the quadratic equation. -->
+            <tr>
+                <td><font color = "darkred"><b>Positive Result : </b></font></td>
+                <td><font color = "darkred"><b>{{ Final_Result_Positive }}</b></font></td>
+            </tr>
+            <tr>
+                <td><font color = "darkred"><b>Negative Result : </b></font></td>
+                <td><font color = "darkred"><b>{{ Final_Result_Negative }}</b></font></td>
+            </tr>
+        </table>    
+    </body>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}

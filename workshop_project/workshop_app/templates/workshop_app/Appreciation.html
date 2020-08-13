@@ -1,0 +1,29 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>   
+        <span class = "block_title">End of Experiment</span>
+    </h1>
+{% endblock %}
+
+<!-- This is the end of the application. -->>
+{% block content %}
+    <div style = "text-align: center;">
+        <h2>
+            <!-- The following information is transferred from the models.py file. -->
+            <span class = "secondmost_heading">
+                Thank You Very Much <b>{{ player.Name_Initials_Consent }}.</b>
+            </span>
+        </h2>
+
+        <!-- This empty paragraph is used to put a space in between the heading and closing message. -->
+        <p></p>
+
+        <p>
+            <span class = "regular_block">
+                <u>This is the end of the experiment.</u>
+            </span>
+        </p>
+    </div>
+{% endblock %}

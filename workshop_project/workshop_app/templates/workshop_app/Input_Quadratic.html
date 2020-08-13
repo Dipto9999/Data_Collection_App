@@ -1,0 +1,41 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">Formulating Quadratic Expression</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <h2>
+        <!-- The following information is transferred from the models.py and pages.py files. -->
+        <div style = "text-align: center;">
+            <span class = "secondmost_heading"><b>Advertisement :</b> {{ player.Name_Initials_Consent }},</br></span>
+            <span class = "secondmost_heading">{{ Advert }}</span>
+        </div>
+    </h2>
+
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p>
+
+    <div class = "regular_block">
+        <p> 
+            <u><b>{{ player.Name_Initials_Consent }}</b>, Please Provide The Following Details To Describe Your Quadratic Expression :</u></br>     
+            <div style = "color:darkgreen; font-weight : bold; text-align: center;">
+                Standard Quadratic Equation : <b>A*(x^2) + B*(x) + C</b>
+            </div>
+                {% formfield player.A_Coefficient label = "What is the coefficient A in front of x^2? " %}
+                {% formfield player.B_Coefficient label = "What is coefficient B in front of x? " %}
+                {% formfield player.C_Coefficient label = "What is the constant C? " %}
+        </p>
+    </div>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}

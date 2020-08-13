@@ -1,0 +1,42 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">Fourth Decision</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div style = "text-align: center;">
+        <h2>
+            <!-- The following information is transferred from the models.py file. -->
+            <span class = "secondmost_heading">
+                {{ Constants.name_developer }} Has Developed this App.
+            </span>
+        </h2> 
+    </div>
+
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p>
+
+    <div class = "regular_block">
+        <p>
+            <u><b>{{ player.Name_Initials_Consent }}</b>, Please Make a Decision :</u></br>
+            Will you prefer a constant amount of <mark>$100</mark> or a random draw <mark>between $50 and $150?</mark></br>
+                {% formfield player.Decision_4 label = "Please make your fourth decision: " %}
+        </p>
+
+        <p style = "text-align: center;">                
+            Note: You stand to earn a <mark>low amount of $50</mark> and a <mark>high amount of $150</mark> if you choose random draw.
+        </p>       
+    </div>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}

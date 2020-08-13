@@ -1,0 +1,105 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+<!-- This CSS Script will be included in all pages of the App.-->>
+{% block app_styles %}
+    <style>
+        /* This CSS block specifies the styling of the block titles on each page. */
+        .block_title {
+            background-color : skyblue;
+            color : rgb(6, 90, 10);
+
+            font-family : "Trebuchet MS", Helvetica, sans-serif;
+            font-weight : bold;
+
+            border-style : solid;
+            border-width : medium;
+            border-color : black;
+        }
+
+        /* This CSS block specifies the styling of the secondmost headings on each page. */
+        .secondmost_heading {
+            background-color : rgb(75, 129, 79);
+            color : black;
+
+            font-family : Arial, Helvetica, sans-serif;
+            font-weight : bold;
+            
+            border-style : solid;
+            border-width : thin;
+            border-color : black;
+        }
+
+        /* This CSS block specifies the styling of traditional text blocks to appear on each page. */
+        .regular_block {
+            background-color: lightgrey;
+
+            border-style : dashed;
+            border-width : thin;
+            border-color : black;
+            padding : 10px;
+        }
+
+        /* This CSS block specifies the styling of the text telling the individual to navigate to the next page. */
+        .next_button {
+            background-color: rgb(0, 255, 0);
+            color : black;
+    
+            font-family : Arial, Helvetica, sans-serif;
+            font-weight : bold;
+
+            border-style : solid;
+            border-width : thin;   
+            border-color : black;
+        }
+
+        /* This CSS block specifies the styling of the author information. */
+        #about_author {
+            background-color :rgb(199, 203, 224);
+            color :rgb(4, 0, 252); 
+
+            font-family : "Trebuchet MS", Helvetica, sans-serif;
+
+            border-style : dotted;
+            border-width : thin;   
+            border-radius : 5px;  
+            border-color : rgb(4, 0, 252);    
+        }
+
+        /* This CSS block specifies the styling of all images. */
+        img {
+            border-style : solid;
+            border-width : thin;   
+            border-color : black;    
+        }
+
+        /* This CSS block specifies the styling of all paragraphs. */
+        p {
+            color : black;
+            font-family : Arial, Helvetica, sans-serif;
+        }
+
+        /* This CSS block specifies the styling of all tables. */
+        table {
+            font-family : Arial, Helvetica, sans-serif;
+            
+            border-style : solid;
+            border-width : medium;
+            border-color : black;
+            background-color: rgb(209, 219, 63);
+
+            width : 100%;
+        }
+
+        /* This CSS block specifies the styling of all data cells and header cells in tables. */
+        td, th {
+            border-style : dashed;
+            border-width : light;
+            border-color : black;
+
+            text-align : left;
+            padding : 8px;
+        }
+
+    </style>
+{% endblock %}

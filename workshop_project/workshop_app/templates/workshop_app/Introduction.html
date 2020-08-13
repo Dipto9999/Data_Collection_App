@@ -1,32 +1,53 @@
-{% extends "global/Page.html" %}
-{% load otree static %}
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
 
 {% block title %}
-    Introduction
+    <h1>
+        <span class = "block_title">Web Application</span>
+    </h1>
 {% endblock %}
 
 {% block content %}
-<body>
-    <img src = {% static "../../../Images/Sunset-Landscape.jpg" %}" width = "950" height = "300" />
-</body>
+    <body>
+        <!-- This image is stored in the _static directory. -->
+        <img src = "{% static "Images/Sunset-Landscape.jpg" %}" width = "950" height = "300" />
+    </body>
 
-<h2>
-    <p style= "color:green"><b>Consent Decision</b></p>
-</h2>
-This is designed by Muntakim Rahman of UBC Electrical and Computer Engineering Class of 2022.<br>
-Click this link to view his profile: <a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">More About Muntakim.</a>
-    
-<p></p>
-<div class = "instructions well well-lg">
+    <!-- This empty paragraph is used to put a space in between the image and heading. -->
+    <p></p>
+
+    <h2>
+        <span class = "secondmost_heading">Consent Decision</span>
+    </h2>
+
+    <!-- A bit of information about the author. -->
     <p>
-        Please provide the following details in the box to indicate your consent to participate in this research.
-        <!-- The following information is transferred from the models.py file.-->
-        {% formfield player.Name_Initials_Consent label = "Your Initials or First Name" %}
-        {% formfield player.Email_Consent label = "Email" %}
-        {% formfield player.Contact_Consent label = "Phone Number" %}
+        <div id = "about_author">
+            This is designed by Muntakim Rahman of UBC Electrical and Computer Engineering Class of 2022.</br>
+            Click this link to view his profile: <a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">More About Muntakim.</a>
+        </div>    
+    </p>
+    
+       
+    <!-- This empty paragraph is used to put a space in between the author information and user fields. -->
+    <p></p>
 
-    </p>    
-</div>
+    <div class = "regular_block">
+        <p>
+            <u>Please Provide Following Details To Indicate Your Consent To Participate In This Research :</u>
+                <!-- The following information is transferred from the models.py file. -->
+                {% formfield player.Name_Initials_Consent label = "Your Initials or First Name" %}
+                {% formfield player.Age_Consent label = "What is your age? You must be 10 or older to partake in this experiment." %}
+                {% formfield player.Email_Consent label = "Email" %}
+                {% formfield player.Contact_Consent label = "Phone Number" %}
+        </p>    
+    </div>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
     {% next_button %}
-
 {% endblock %}

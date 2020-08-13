@@ -1,0 +1,36 @@
+{% extends "workshop_app/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    <h1>
+        <span class = "block_title">First Decision Results</span>
+    </h1>
+{% endblock %}
+
+{% block content %}
+    <div style = "text-align: center;">    
+        <h2>
+            <!-- The following information is transferred from the models.py file. -->
+            <span class = "secondmost_heading">
+                <b>{{ player.Name_Initials_Consent }}</b>, Your Earnings Have Been Generated.
+            </span>
+        </h2>
+    </div>
+
+    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <p></p> 
+
+    <p class = "regular_block">
+        <!-- The following information is transferred from the models.py and pages.py files. -->
+        {{ Inform }}</br>
+        {{ Random_Number }}
+    </p>
+
+    <!-- Move to next page. -->
+    <span class = "next_button">Continue ...</span>
+
+    <!-- This empty paragraph is used to put a space in between the text and button. -->
+    <p></p>
+
+    {% next_button %}
+{% endblock %}
