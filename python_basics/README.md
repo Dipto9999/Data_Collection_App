@@ -1,5 +1,9 @@
 # Python Basics
 
+## Contents
+* [Overview](#Overview)
+* [Credit](#Credit)
+
 ## Overview
 Prior to developing the <b>Web App</b>, the following scripts were written to 
 explore the language and its features <i>(i.e. Integers, Strings, Booleans, Custom Functions)</i>. 

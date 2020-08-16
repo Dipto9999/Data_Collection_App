@@ -7,7 +7,7 @@
 * [Credit](#Credit)
 
 ## Overview
-Create <b>Web Application</b> driven by <b>Python</b> to collect user data and make economic decisions. 
+Create <b>Web Application</b> driven by <b>Python</b> to collect user data and make economic decisions.</br> 
 We will be using the <b>oTree</b> open-source framework to build the survey elements of the app. 
 
 ## App Modifications
@@ -18,14 +18,14 @@ We will be using the <b>oTree</b> open-source framework to build the survey elem
     <li>
         The <b>HTML</b> files in the <a href = "workshop_project/workshop_app/templates/workshop_app">templates/workshop_app</a> path.
         <ul>
-            <li>These files contain both <b>HTML</b> and <b>CSS</b> to display the webpages as intended.</li>
+            <li>These files are composed of both <b>HTML</b> and <b>CSS</b> to display the webpages as intended.</li>
         </ul>
     </li>
     <li>
         The <b>Text</b> files to describe the app hosted on the cloud by <b>Heroku</b> platform.
         <ul>
-            <li><a href = "workshop_project/workshop_app/requirements_base.txt">Requirements Base</a> file specifies the version of <b>oTree</b> which is running the app.</li>
-            <li><a href = "workshop_project/workshop_app/runtime.txt">Runtime</a> file specifies the version of <b>Python</b> which is running the app.</li>
+            <li><a href = "workshop_project/requirements_base.txt">Requirements Base</a> file specifies the version of <b>oTree</b> which is running the app.</li>
+            <li><a href = "workshop_project/runtime.txt">Runtime</a> file specifies the version of <b>Python</b> which is running the app.</li>
         </ul>
     </li>
 </ul>
