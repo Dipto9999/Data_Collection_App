@@ -19,9 +19,9 @@ receive a fixed earning (i.e. <i>$100</i>) or a randomly decided earning (i.e. <
 
 The following single-use links can be used to provide user data :
 <ul>
-    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/u1p8wgye">Individual 1</a></li>    
-    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/rmmsypq8">Individual 2</a></li>
-    <li><a href = "	https://economics-app-muntakim.herokuapp.com/InitializeParticipant/9l7fkk65">Individual 3</a></li>
+    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/kmzmts3v">Individual 1</a></li>    
+    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/23z4lvkk">Individual 2</a></li>
+    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/6kaq3oo8">Individual 3</a></li>
 </ul>
 
 #### Decisions
