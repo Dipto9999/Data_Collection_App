@@ -37,6 +37,8 @@ class Input_Quadratic(Page) :
     form_fields = ['A_Coefficient', 'B_Coefficient', 'C_Coefficient']
 
     # Page is displayed if the app was chosen to be quadratic.
+        # All functions defined in a class require a self parameter to specify 
+        # that they are invoked on the particular object in question. 
     def is_displayed(self) :
         return self.player.App_Choice == Constants.quadratic
 
@@ -55,6 +57,9 @@ class Input_Quadratic(Page) :
 #################################
 
 class Results_Quadratic(Page) :
+    ## Note that since we don't expect the player to provide us with any information,
+    ## there is no reason to provide a form model and form fields.
+
     # Page is displayed if the app was chosen to be quadratic.
     def is_displayed(self) :
         return self.player.App_Choice == Constants.quadratic

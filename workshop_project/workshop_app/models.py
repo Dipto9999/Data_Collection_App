@@ -30,7 +30,8 @@ class Constants(BaseConstants) :
 
     name_in_url = 'workshop_app'
     players_per_group = None
-    num_rounds = 5
+    # This constant refers to the number of trials conducted.
+    num_rounds = 1
     name_developer = "Muntakim Rahman"
 
     ###################################
@@ -97,6 +98,7 @@ class Player(BasePlayer) :
     ######## Player Consent ########
     ################################
 
+    # StringField type is specified for text strings.
     Name_Initials_Consent = models.StringField()
     # Individual must have age between 10 and 100.
     Age_Consent = models.PositiveIntegerField(min = 10, max = 100)
@@ -108,6 +110,7 @@ class Player(BasePlayer) :
     ########## Instructions #############
     #####################################
 
+    # FloatField type is specified for real numbers.
     App_Choice = models.FloatField(
         choices = [
             [Constants.quadratic, 'Quadratic'],
