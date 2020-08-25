@@ -4,6 +4,13 @@
 <!-- This CSS Script will be included in all pages of the App.-->>
 {% block app_styles %}
     <style>
+        /* This CSS block specifies the styling of the body. */
+        .otree-body {
+            border-style : solid;
+            border-width : thin;
+            border-color : black;
+        }
+
         /* This CSS block specifies the styling of the block titles on each page. */
         .block_title {
             background-color : skyblue;
@@ -15,6 +22,7 @@
             border-style : solid;
             border-width : medium;
             border-color : black;
+            
         }
 
         /* This CSS block specifies the styling of the secondmost headings on each page. */
@@ -59,18 +67,36 @@
             color :rgb(4, 0, 252); 
 
             font-family : "Trebuchet MS", Helvetica, sans-serif;
+            text-align : center;
+            padding: 5px;
+
 
             border-style : dotted;
             border-width : thin;   
             border-radius : 5px;  
             border-color : rgb(4, 0, 252);    
+            overflow : auto;
         }
 
-        /* This CSS block specifies the styling of all images. */
-        img {
+        /* This CSS block specifies the styling of the landscape image. */
+        #landscape {
             border-style : solid;
             border-width : thin;   
-            border-color : black;    
+            border-color : black; 
+
+            margin-left: auto;
+            margin-right: auto;
+            width : 100%;
+        }
+
+        #headshot {
+            border-style : solid;
+            border-width : medium;   
+            border-color : rgb(43, 8, 43); 
+
+            float : right;
+
+            width : 15%;
         }
 
         /* This CSS block specifies the styling of all paragraphs. */

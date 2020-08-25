@@ -10,7 +10,7 @@
 {% block content %}
     <body>
         <!-- This image is stored in the _static directory. -->
-        <img src = "{% static "Images/Sunset-Landscape.jpg" %}" width = "950" height = "300" />
+        <img src = "{% static "Images/Sunset-Landscape.jpg" %}" id = "landscape"/>
     </body>
 
     <!-- This empty paragraph is used to put a space in between the image and heading. -->
@@ -23,9 +23,10 @@
     <!-- A bit of information about the author. -->
     <p>
         <div id = "about_author">
+            <img src = "{% static "Images/Headshot.jpg" %}" id = "headshot"/>
             This is designed by Muntakim Rahman of UBC Electrical and Computer Engineering Class of 2022.</br>
             Click this link to view his profile: <a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">More About Muntakim.</a>
-        </div>    
+        </div>
     </p>
     
        

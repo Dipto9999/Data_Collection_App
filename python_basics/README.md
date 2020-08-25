@@ -12,18 +12,18 @@ The <a href = "further_exploration.py">further_exploration</a> file is of intere
 simple Investment Function with the use of <i>If Statements</i>.
 
 ```python
-    def investment(principal, interest, year) :
-        total_profit = principal * (1 + interest) ** year
-        net_profit = total_profit - principal
+def investment(principal, interest, year) :
+    total_profit = principal * (1 + interest) ** year
+    net_profit = total_profit - principal
 
-        if interest <= 0.5 :
-            statement = "Less Interest"
-        elif (interest <= 1 ) :
-            statement = "More Interest"
-        elif interest > 1 :
-            statement = "Be Cautious! This is a Ponzi Scheme."
+    if interest <= 0.5 :
+        statement = "Less Interest"
+    elif (interest <= 1 ) :
+        statement = "More Interest"
+    elif interest > 1 :
+        statement = "Be Cautious! This is a Ponzi Scheme."
 
-        return total_profit, net_profit, statement
+    return total_profit, net_profit, statement
 ```
 
 ## Credit
