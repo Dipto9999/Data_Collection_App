@@ -15,22 +15,41 @@
     <!-- This empty paragraph is used to put a space in between the headings. -->
     <p></p>
 
-    <div style = "text-align: center;">
-        <h3>
-            <span class = "regular_block">
-                (Principal Amount) * ( ( 1 + (Interest Rate) ) ^ (Maturity Period) )
-            </span>
-        </h3>
+    <div style = "text-align : center;">
+        <span class="alert alert-info">
+            <strong>(Principal Amount) * ( ( 1 + (Interest Rate) ) ^ (Maturity Period) )</strong>
+        </span>
     </div>
     
-    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
+    <p></p>
+
+    <!-- Add a progress bar to show how far the user is in the application. -->
+    <div class = "container">
+        <p>
+            <span class = "alert alert-primary">Progress</span>
+            <div class = "progress" style = "height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                    <strong style = "color : black">Introduction</strong>
+                </div>
+
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                    <strong style = "color : black">Function Calculation</strong>
+                </div>
+            
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+            </div>
+        </p>
+    </div>  
+    
+    <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
     <p></p>
 
     <body>
         <table>
             <tr>
-                <th><b>Inputs</b></th>
-                <th><b>You Entered</b></th>
+                <th><b><u>Inputs</u></b></th>
+                <th><b><u>You Entered</u></b></th>
             </tr>
 
             <!-- The following information is transferred from the pages.py file. -->       

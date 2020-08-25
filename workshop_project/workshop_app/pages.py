@@ -141,25 +141,25 @@ class Results_Questionnaire_COVID_1(Page) :
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_1 == Constants.fixed_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
         elif ((self.player.Decision_1 == Constants.fixed_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'               
             }
 
@@ -180,25 +180,25 @@ class Results_Questionnaire_COVID_2(Page) :
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_2 == Constants.fixed_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
         elif ((self.player.Decision_2 == Constants.fixed_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_2 == Constants.random_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_2 == Constants.random_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
 
@@ -220,25 +220,25 @@ class Results_Questionnaire_COVID_3(Page) :
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_3 == Constants.fixed_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
         elif ((self.player.Decision_3 == Constants.fixed_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_3 == Constants.random_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'               
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_3 == Constants.random_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
 
@@ -259,25 +259,25 @@ class Results_Questionnaire_COVID_4(Page) :
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_4 == Constants.fixed_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
         elif ((self.player.Decision_4 == Constants.fixed_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_4 == Constants.random_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_4 == Constants.random_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
 
@@ -298,25 +298,25 @@ class Results_Questionnaire_COVID_5(Page) :
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_5 == Constants.fixed_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
         elif ((self.player.Decision_5 == Constants.fixed_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a fixed amount of $100.',
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
             }
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_5 == Constants.random_amount) and (generated_value > 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_5 == Constants.random_amount) and (generated_value < 100)) :
             return {
-                'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
                 'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
             }
 

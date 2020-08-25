@@ -10,18 +10,40 @@
 {% block content %}
     <h2>
         <!-- The following information is transferred from the models.py and pages.py files. -->
-        <div style = "text-align: center;">
+        <div style = "text-align : center;">
             <span class = "secondmost_heading"><b>Advertisement :</b> {{ player.Name_Initials_Consent }},</br></span>
             <span class = "secondmost_heading">{{ Advert }}</span>
         </div>
     </h2>
 
-    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
+    <p></p>
+
+    <!-- Add a progress bar to show how far the user is in the application. -->
+    <div class = "container">
+        <p>
+            <span class = "alert alert-primary">Progress</span>
+            <div class = "progress" style = "height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                    <strong style = "color : black">Introduction</strong>
+                </div>
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 17%; height : 10px">                    
+                    <strong style = "color : black">Function Calculation</strong>
+                </div>
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+            </div>
+        </p>
+    </div>  
+    
+    <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
     <p></p>
         
     <div class = "regular_block">
         <p>
-            <u><b>{{ player.Name_Initials_Consent }}</b>, Please Provide Details Regarding Your Investment Plan :</u>
+            <div class = "alert alert-primary">
+                <strong>{{ player.Name_Initials_Consent }}</strong>, Please Provide Details Regarding Your Investment Plan :</br>
+            </div>
+            
                 {% formfield player.Principal_Amount label = "What is the amount you wish to invest? " %}
                 {% formfield player.Interest_Rate label = "What is the market interest rate in decimals (i.e. 5% translates to 0.05)? " %}
                 {% formfield player.Maturity_Period label = "How many years do you wish to invest for? " %}

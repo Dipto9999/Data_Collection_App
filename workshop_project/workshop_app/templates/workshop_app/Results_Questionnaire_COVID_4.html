@@ -12,19 +12,47 @@
         <h2>
             <!-- The following information is transferred from the models.py file. -->
             <span class = "secondmost_heading">
-                <b>{{ player.Name_Initials_Consent }}</b>, Your Earnings Have Been Generated.
+                {{ player.Name_Initials_Consent }} : Your Earnings Have Been Generated.
             </span>
         </h2>
     </div>
 
-    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
-    <p></p> 
+    <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
+    <p></p>
 
-    <p class = "regular_block">
-        <!-- The following information is transferred from the models.py and pages.py files. -->
-        {{ Inform }}</br>
-        {{ Random_Number }}
-    </p>
+    <!-- Add a progress bar to show how far the user is in the application. -->
+    <div class = "container">
+        <p>
+            <span class = "alert alert-primary">Progress</span>
+            <div class = "progress" style = "height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                    <strong style = "color : black">Introduction</strong>
+                </div>
+
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                    <strong style = "color : black">Function Calculation</strong>
+                </div>
+            
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 27.2%; height : 10px">
+                    <strong style = "color : black">Questionnaire</strong>
+                </div>
+            </div>
+        </p>
+    </div>  
+    
+    <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
+    <p></p>
+
+    <div class = "regular_block">
+        <p>
+            <div class = "alert alert-primary">
+                <!-- The following information is transferred from the models.py and pages.py files. -->
+                <strong>{{ player.Name_Initials_Consent }}</strong> : {{ Inform }}</br>
+            </div>
+
+            {{ Random_Number }}
+        </p>
+    </div>
 
     <!-- Move to next page. -->
     <span class = "next_button">Continue ...</span>

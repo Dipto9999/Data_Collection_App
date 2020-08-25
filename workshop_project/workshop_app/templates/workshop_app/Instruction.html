@@ -12,13 +12,33 @@
         <span class = "secondmost_heading">Instruction for App Choice</span>
     </h2>
 
-    <!-- This empty paragraph is used to put a space in between the heading and user fields. -->
+    <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
+    <p></p>
+
+    <!-- Add a progress bar to show how far the user is in the application. -->
+    <div class = "container">
+        <p>
+            <span class = "alert alert-primary">Progress</span>
+            <div class = "progress" style = "height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 17%; height : 10px">
+                    <strong style = "color : black">Introduction</strong>
+                </div>
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+            </div>
+        </p>
+    </div>  
+    
+    <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
     <p></p>
     
     <div class = "regular_block">
         <p>
-            <!-- The following information is transferred from the models.py file. -->
-            <u>Hello <b>{{ player.Name_Initials_Consent }}</b>. Please Provide The Following Details :</u>
+            <div class = "alert alert-primary">
+                <!-- The following information is transferred from the models.py file. -->
+                Hello <strong>{{ player.Name_Initials_Consent }}</strong>. Please Provide The Following Details :
+            </div>
+            
                 {% formfield player.App_Choice label = "What type of computation do you wish to make? " %}
                 {% formfield player.Education label = "What is your educational background? " %}
                 {% formfield player.Concern label = "What is your current concern in this COVID-19 period? " %}

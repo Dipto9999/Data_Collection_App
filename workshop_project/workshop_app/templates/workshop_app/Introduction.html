@@ -20,6 +20,26 @@
         <span class = "secondmost_heading">Consent Decision</span>
     </h2>
 
+    <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
+    <p></p>
+
+    <!-- Add a progress bar to show how far the user is in the application. -->
+    <div class = "container">
+        <p>
+            <span class = "alert alert-primary">Progress</span>
+            <div class = "progress" style = "height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 17%; height : 10px">
+                    <strong style = "color : black">Introduction</strong>
+                </div>
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+            </div>
+        </p>
+    </div>  
+    
+    <!-- This empty paragraph is used to put a space in between the progress bar and author information. -->
+    <p></p>
+
     <!-- A bit of information about the author. -->
     <p>
         <div id = "about_author">
@@ -27,15 +47,17 @@
             This is designed by Muntakim Rahman of UBC Electrical and Computer Engineering Class of 2022.</br>
             Click this link to view his profile: <a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">More About Muntakim.</a>
         </div>
-    </p>
-    
+    </p>    
        
     <!-- This empty paragraph is used to put a space in between the author information and user fields. -->
     <p></p>
 
     <div class = "regular_block">
         <p>
-            <u>Please Provide Following Details To Indicate Your Consent To Participate In This Research :</u>
+            <div class = "alert alert-primary">
+                Please Provide Following Details To Indicate Your Consent To Participate In This Research :
+            </div>
+            
                 <!-- The following information is transferred from the models.py file. -->
                 {% formfield player.Name_Initials_Consent label = "Your Initials or First Name" %}
                 {% formfield player.Age_Consent label = "What is your age? You must be 10 or older to partake in this experiment." %}
