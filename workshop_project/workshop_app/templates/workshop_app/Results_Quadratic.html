@@ -24,66 +24,68 @@
     <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
     <p></p>
 
-    <!-- Add a progress bar to show how far the user is in the application. -->
     <div class = "container">
         <p>
+            <!-- Add a progress bar to show how far the user is in the application. -->
             <span class = "alert alert-primary">Progress</span>
             <div class = "progress" style = "height : 10px">
-                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%">
                     <strong style = "color : black">Introduction</strong>
                 </div>
-
-                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
-                    <strong style = "color : black">Function Calculation</strong>
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%">
+                    <strong style = "color : black">Calculation</strong>
                 </div>
-            
-                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%"></div>
             </div>
         </p>
-    </div>  
     
-    <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
-    <p></p>
+        <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
+        <p></p>
 
-    <body>
-        <table>
-            <tr>
-                <th><b><u>Inputs</u></b></th>
-                <th><b><u>You Entered</u></b></th>
-            </tr>
+        <body>
+            <div class = "table-responsive">
+                <table class = "table">
+                        <thead class = "bg-dark text-white">
+                        <tr>
+                            <th>Inputs</th>
+                            <th>You Entered</th>
+                        </tr>
+                    </thead>
 
-            <!-- The following information is transferred from the pages.py file. -->       
-            <!-- Display the coefficients input by the individual. -->
-            <tr>
-                <td><font color = "black"><b>A Coefficient : </b></font></td>
-                <td><font color = "black"><b>{{ A_Coefficient }}</b></font></td>
-            </tr>    
-            <tr>
-                <td><font color = "black"><b>B Coefficient : </b></font></td>
-                <td><font color = "black"><b>{{ B_Coefficient }}</b></font></td>
-            </tr>    
-            <tr>
-                <td><font color = "black"><b>C Coefficient : </b></font></td>
-                <td><font color = "black"><b>{{ C_Coefficient }}</b></font></td>
-            </tr>
-            
-            <!-- Display the roots of the quadratic equation. -->
-            <tr>
-                <td><font color = "darkred"><b>Positive Result : </b></font></td>
-                <td><font color = "darkred"><b>{{ Final_Result_Positive }}</b></font></td>
-            </tr>
-            <tr>
-                <td><font color = "darkred"><b>Negative Result : </b></font></td>
-                <td><font color = "darkred"><b>{{ Final_Result_Negative }}</b></font></td>
-            </tr>
-        </table>    
-    </body>
-
-    <!-- Move to next page. -->
-    <span class = "next_button">Continue ...</span>
+                    <tbody>
+                        <!-- The following information is transferred from the pages.py file. -->       
+                        <!-- Display the coefficients input by the individual. -->
+                        <tr>
+                            <td>A Coefficient :</td>
+                            <td>{{ A_Coefficient }}</td>
+                        </tr>    
+                        <tr>
+                            <td>B Coefficient :</td>
+                            <td>{{ B_Coefficient }}</td>
+                        </tr>    
+                        <tr>
+                            <td>C Coefficient :</td>
+                            <td>{{ C_Coefficient }}</td>
+                        </tr>
+                            
+                        <!-- Display the roots of the quadratic equation. -->
+                        <tr class = "bg-primary text-white">
+                            <td><strong>Positive Result :</strong></td>
+                            <td><strong>{{ Final_Result_Positive }}</strong></td>
+                        </tr>
+                        <tr class = "bg-primary text-white">
+                            <td><strong>Negative Result :</strong></td>
+                            <td><strong>{{ Final_Result_Negative }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>   
+        </body>
+    </div>
 
     <!-- This empty paragraph is used to put a space in between the text and button. -->
     <p></p>
 
-    {% next_button %}
+    <!-- Move to next page. -->
+    <button class = "next_button" onclick = '{% next_button %}'>Continue ...</button>
 {% endblock %}

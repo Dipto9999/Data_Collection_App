@@ -1,6 +1,40 @@
 {% extends "global/Page.html" %}
 {% load staticfiles otree %}
 
+{% block scripts %}
+<script>
+    var toggleAffix = function(affixElement, wrapper, scrollElement) {
+
+        var height = affixElement.outerHeight(),
+            top = wrapper.offset().top;
+
+        if (scrollElement.scrollTop() >= top){
+            wrapper.height(height);
+            affixElement.addClass("affix");
+        }
+        else {
+            affixElement.removeClass("affix");
+            wrapper.height('auto');
+        }
+
+    };
+
+
+$('[data-toggle="affix"]').each(function() {
+    var ele = $(this),
+        wrapper = $('<div></div>');
+
+    ele.before(wrapper);
+    $(window).on('scroll resize', function() {
+        toggleAffix(ele, wrapper, $(this));
+    });
+
+    // init
+    toggleAffix(ele, wrapper, $(window));
+    });
+</script>
+{% endblock %}
+
 <!-- This CSS Script will be included in all pages of the App.-->>
 {% block app_styles %}
     <style>
@@ -61,13 +95,20 @@
             border-color : black;
         }
 
+        .affix {
+            top : 1;
+            width : 100%;
+            z-index : 1;
+            padding-top : 70px;
+        }
+
         /* This CSS block specifies the styling of the author information. */
         #about_author {
             background-color :rgb(199, 203, 224);
             color :rgb(4, 0, 252); 
 
             font-family : "Trebuchet MS", Helvetica, sans-serif;
-            text-align : center;
+            text-align : left;
             padding: 5px;
 
 
@@ -112,7 +153,6 @@
             border-style : solid;
             border-width : medium;
             border-color : black;
-            background-color: rgb(209, 219, 63);
 
             width : 100%;
         }

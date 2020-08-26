@@ -24,62 +24,64 @@
     <!-- This empty paragraph is used to put a space in between the heading and progress bar. -->
     <p></p>
 
-    <!-- Add a progress bar to show how far the user is in the application. -->
     <div class = "container">
         <p>
+            <!-- Add a progress bar to show how far the user is in the application. -->
             <span class = "alert alert-primary">Progress</span>
             <div class = "progress" style = "height : 10px">
-                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%">
                     <strong style = "color : black">Introduction</strong>
                 </div>
-
-                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
-                    <strong style = "color : black">Function Calculation</strong>
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%">
+                    <strong style = "color : black">Calculation</strong>
                 </div>
-            
-                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%; height : 10px"></div>
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%"></div>
             </div>
         </p>
-    </div>  
     
-    <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
-    <p></p>
+        <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
+        <p></p>
 
-    <body>
-        <table>
-            <tr>
-                <th><b><u>Inputs</u></b></th>
-                <th><b><u>You Entered</u></b></th>
-            </tr>
+        <body>
+            <div class = "table-responsive">
+                <table class = "table">
+                    <thead class = "bg-dark text-white">
+                        <tr>
+                            <th>Inputs</th>
+                            <th>You Entered</th>
+                        </tr>
+                    </thead>
 
-            <!-- The following information is transferred from the pages.py file. -->       
-            <!-- Display the information input by the individual. -->
-            <tr>
-                <td><font color = "black"><b>Principal Amount : </b></font></td>
-                <td><font color = "black"><b>${{ Principal_Amount }}</b></font></td>
-            </tr>    
-            <tr>
-                <td><font color = "black"><b>Interest Rate : </b></font></td>
-                <td><font color = "black"><b>{{ Interest_Rate }}</b></font></td>
-            </tr>    
-            <tr>
-                <td><font color = "black"><b>Maturity Period : </b></font></td>
-                <td><font color = "black"><b>{{ Maturity_Period }} Years</b></font></td>
-            </tr>
-            
-            <!-- Display the final returns of investment. -->
-            <tr>
-                <td><font color = "darkred"><b>Final Returns : </b></font></td>
-                <td><font color = "darkred"><b>${{ Final_Returns }}</b></font></td>
-            </tr>
-        </table>    
-    </body>
-
-    <!-- Move to next page. -->
-    <span class = "next_button">Continue ...</span>
+                    <tbody>
+                        <!-- The following information is transferred from the pages.py file. -->       
+                        <!-- Display the information input by the individual. -->
+                        <tr>
+                            <td>Principal Amount :</td>
+                            <td>${{ Principal_Amount }}</td>
+                        </tr>    
+                        <tr>
+                            <td>Interest Rate :</td>
+                            <td>{{ Interest_Rate }}</td>
+                        </tr>    
+                        <tr>
+                            <td>Maturity Period :</td>
+                            <td>{{ Maturity_Period }} Years</td>
+                        </tr>
+                        
+                        <!-- Display the final returns of investment. -->
+                        <tr class = "bg-primary text-white">
+                            <td><strong>Final Returns :</strong></td>
+                            <td><strong>${{ Final_Returns }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>   
+        </body>
+    </div>  
 
     <!-- This empty paragraph is used to put a space in between the text and button. -->
     <p></p>
 
-    {% next_button %}
+    <!-- Move to next page. -->
+    <button class = "next_button" onclick = '{% next_button %}'>Continue ...</button>
 {% endblock %}

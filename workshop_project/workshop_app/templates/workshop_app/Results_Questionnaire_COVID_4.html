@@ -25,15 +25,13 @@
         <p>
             <span class = "alert alert-primary">Progress</span>
             <div class = "progress" style = "height : 10px">
-                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
+                <div class = "progress-bar bg-info progress-bar-striped progress-bar-animated" style = "width : 33%">
                     <strong style = "color : black">Introduction</strong>
                 </div>
-
-                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%; height : 10px">
-                    <strong style = "color : black">Function Calculation</strong>
+                <div class = "progress-bar bg-warning progress-bar-striped progress-bar-animated" style = "width : 33%">
+                    <strong style = "color : black">Calculation</strong>
                 </div>
-            
-                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 27.2%; height : 10px">
+                <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 27.2%">
                     <strong style = "color : black">Questionnaire</strong>
                 </div>
             </div>
@@ -54,11 +52,9 @@
         </p>
     </div>
 
-    <!-- Move to next page. -->
-    <span class = "next_button">Continue ...</span>
-
     <!-- This empty paragraph is used to put a space in between the text and button. -->
     <p></p>
 
-    {% next_button %}
+    <!-- Move to next page. -->
+    <button class = "next_button" onclick = '{% next_button %}'>Continue ...</button>
 {% endblock %}
