@@ -2,38 +2,7 @@
 {% load staticfiles otree %}
 
 {% block scripts %}
-<script>
-    var toggleAffix = function(affixElement, wrapper, scrollElement) {
-
-        var height = affixElement.outerHeight(),
-            top = wrapper.offset().top;
-
-        if (scrollElement.scrollTop() >= top){
-            wrapper.height(height);
-            affixElement.addClass("affix");
-        }
-        else {
-            affixElement.removeClass("affix");
-            wrapper.height('auto');
-        }
-
-    };
-
-
-$('[data-toggle="affix"]').each(function() {
-    var ele = $(this),
-        wrapper = $('<div></div>');
-
-    ele.before(wrapper);
-    $(window).on('scroll resize', function() {
-        toggleAffix(ele, wrapper, $(this));
-    });
-
-    // init
-    toggleAffix(ele, wrapper, $(window));
-    });
-</script>
-{% endblock %}
+{% endblock scripts %}
 
 <!-- This CSS Script will be included in all pages of the App.-->>
 {% block app_styles %}
@@ -95,13 +64,6 @@ $('[data-toggle="affix"]').each(function() {
             border-color : black;
         }
 
-        .affix {
-            top : 1;
-            width : 100%;
-            z-index : 1;
-            padding-top : 70px;
-        }
-
         /* This CSS block specifies the styling of the author information. */
         #about_author {
             background-color :rgb(199, 203, 224);
@@ -119,8 +81,8 @@ $('[data-toggle="affix"]').each(function() {
             overflow : auto;
         }
 
-        /* This CSS block specifies the styling of the landscape image. */
-        #landscape {
+        /* This CSS block specifies the styling of the carousel images. */
+        .carousel_images {
             border-style : solid;
             border-width : thin;   
             border-color : black; 
@@ -168,4 +130,4 @@ $('[data-toggle="affix"]').each(function() {
         }
 
     </style>
-{% endblock %}
+{% endblock app_styles %}

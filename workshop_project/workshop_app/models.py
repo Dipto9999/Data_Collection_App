@@ -200,3 +200,17 @@ class Player(BasePlayer) :
         ],
         verbose_name = 'Decision 5? ',
         widget = widgets.RadioSelect)      
+
+    # Store a value for the player's total earnings.
+    # These will be updated on each questionnaire page 
+    # based on the chosen method of income.
+    Total_Earnings = models.FloatField(initial = 0)
+
+    # Store a value for the player's previous earnings to the current page. 
+    # This accounts for the player refreshing the page.
+    Previous_Earnings = models.FloatField(initial = 0)
+
+    # Store a counter for the number of times the 
+    # player's total earnings were changed.
+    # This is used to account for the player refreshing the page.
+    Number_Earnings = models.IntegerField(initial = 0)

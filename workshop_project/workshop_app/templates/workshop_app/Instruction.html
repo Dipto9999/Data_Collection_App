@@ -5,7 +5,7 @@
     <h1>
         <span class = "block_title">App Choice</span>
     </h1>
-{% endblock %}
+{% endblock title %}
 
 {% block content %}
     <h2>
@@ -39,9 +39,9 @@
                 Hello <strong>{{ player.Name_Initials_Consent }}</strong>. Please Provide The Following Details :
             </div>
             
-                {% formfield player.App_Choice label = "What type of computation do you wish to make? " %}
-                {% formfield player.Education label = "What is your educational background? " %}
-                {% formfield player.Concern label = "What is your current concern in this COVID-19 period? " %}
+                {% formfield player.App_Choice label = "What type of <strong>computation</strong> do you wish to make? " %}
+                {% formfield player.Education label = "What is your <strong>educational background</strong>? " %}
+                {% formfield player.Concern label = "What is your current <strong>concern</strong> in this COVID-19 period? " %}
         </p>
     </div>
 
@@ -50,4 +50,4 @@
 
     <!-- Move to next page. -->
     <button class = "next_button" onclick = '{% next_button %}'>Continue ...</button>
-{% endblock %}
+{% endblock content %}

@@ -5,7 +5,7 @@
     <h1>
         <span class = "block_title">Fifth Decision Results</span>
     </h1>
-{% endblock %}
+{% endblock title %}
 
 {% block content %}
     <div style = "text-align: center;">    
@@ -48,7 +48,19 @@
                 <strong>{{ player.Name_Initials_Consent }}</strong> : {{ Inform }}</br>
             </div>
 
-            {{ Random_Number }}
+            <!-- The following information corresponds to the player earnings from this particular decision. -->
+            {% if Difference != '' %}
+                {{ Statement_A1 }} <mark>{{ Random_Number }}</mark> {{ Statement_A2 }} <mark>{{ Comparison }}</mark> {{ Statement_A3 }} <mark>{{ Difference }}</mark>.</br>
+            {% else %}
+                {{ Statement_A1 }} <mark>{{ Random_Number }}</mark> {{ Statement_A2 }} <mark>{{ Comparison }}</mark> {{ Statement_A3 }}.</br>
+            {% endif %}
+
+            <!-- The following information corresponds to the player's total earnings at the end of the experiment. -->
+            {% if Total_Difference != '' %}
+                {{ Statement_B1 }} <mark>{{ Total_Income }}</mark> {{ Statement_B2 }} <mark>{{ Total_Comparison }}</mark> {{ Statement_B3 }} <mark>{{ Total_Difference }}</mark>.</br>
+            {% else %}
+                {{ Statement_B1 }} <mark>{{ Total_Income }}</mark> {{ Statement_B2 }} <mark>{{ Total_Comparison }}</mark> {{ Statement_B3 }}.</br>
+            {% endif %}
         </p>
     </div>
 
@@ -57,4 +69,4 @@
 
     <!-- Move to next page. -->
     <button class = "next_button" onclick = '{% next_button %}'>Continue ...</button>
-{% endblock %}
+{% endblock content %}

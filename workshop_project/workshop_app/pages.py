@@ -138,30 +138,90 @@ class Results_Questionnaire_COVID_1(Page) :
         generated_value = round(random.uniform(50, 150), 2)
         difference = abs(generated_value - 100)
 
+        # Ensure that the total earnings are accurately 
+        # updated when the player refreshes the current page.
+        if (self.player.Number_Earnings == 0) :
+            self.player.Previous_Earnings = self.player.Total_Earnings
+            self.player.Number_Earnings = self.player.Number_Earnings + 1      
+
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_1 == Constants.fixed_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
-        # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
+        # Case where player chooses fixed amount and wins on chance for generated value.
         elif ((self.player.Decision_1 == Constants.fixed_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses fixed amount and the generated value would have been $100.
+        elif ((self.player.Decision_1 == Constants.fixed_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'               
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses generated value and it yields $100.
+        elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
 
 ######################################
 ###### Taking Player Decision 2 ######
@@ -176,31 +236,91 @@ class Results_Questionnaire_COVID_2(Page) :
         # Generate a random number between 50 and 150 to a precision of 2 decimal points.
         generated_value = round(random.uniform(50, 150), 2)
         difference = abs(generated_value - 100)
+    
+        # Ensure that the total earnings are accurately 
+        # updated when the player refreshes the current page.
+        if (self.player.Number_Earnings == 1) :
+            self.player.Previous_Earnings = self.player.Total_Earnings
+            self.player.Number_Earnings = self.player.Number_Earnings + 1      
 
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_2 == Constants.fixed_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
-        # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
+        # Case where player chooses fixed amount and wins on chance for generated value.
         elif ((self.player.Decision_2 == Constants.fixed_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses fixed amount and the generated value would have been $100.
+        elif ((self.player.Decision_2 == Constants.fixed_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_2 == Constants.random_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_2 == Constants.random_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses generated value and it yields $100.
+        elif ((self.player.Decision_2 == Constants.random_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
 
 
 ######################################
@@ -217,30 +337,90 @@ class Results_Questionnaire_COVID_3(Page) :
         generated_value = round(random.uniform(50, 150), 2)
         difference = abs(generated_value - 100)
 
+        # Ensure that the total earnings are accurately 
+        # updated when the player refreshes the current page.
+        if (self.player.Number_Earnings == 2) :
+            self.player.Previous_Earnings = self.player.Total_Earnings
+            self.player.Number_Earnings = self.player.Number_Earnings + 1      
+
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_3 == Constants.fixed_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
-        # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
+        # Case where player chooses fixed amount and wins on chance for generated value.
         elif ((self.player.Decision_3 == Constants.fixed_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses fixed amount and the generated value would have been $100.
+        elif ((self.player.Decision_3 == Constants.fixed_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_3 == Constants.random_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'               
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_3 == Constants.random_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses generated value and it yields $100.
+        elif ((self.player.Decision_3 == Constants.random_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
 
 ######################################
 ###### Taking Player Decision 4 ######
@@ -256,30 +436,90 @@ class Results_Questionnaire_COVID_4(Page) :
         generated_value = round(random.uniform(50, 150), 2)
         difference = abs(generated_value - 100)
 
+        # Ensure that the total earnings are accurately 
+        # updated when the player refreshes the current page.
+        if (self.player.Number_Earnings == 3) :
+            self.player.Previous_Earnings = self.player.Total_Earnings
+            self.player.Number_Earnings = self.player.Number_Earnings + 1   
+
         # Case where player chooses fixed amount and loses out on chance for generated value.
         if ((self.player.Decision_4 == Constants.fixed_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
-        # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
+        # Case where player chooses fixed amount and wins on chance for generated value.
         elif ((self.player.Decision_4 == Constants.fixed_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
             return {
                 'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses fixed amount and the generated value would have been $100.
+        elif ((self.player.Decision_4 == Constants.fixed_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'would have been', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
         # Case where player chooses generated value and wins on chance.
         elif ((self.player.Decision_4 == Constants.random_amount) and (generated_value > 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'greater than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
         # Case where player chooses generated value and makes loss on chance.
         elif ((self.player.Decision_4 == Constants.random_amount) and (generated_value < 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
             return {
                 'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'less than',
+                'Statement_3' : 'the constant amount of $100 by',
+                'Difference' : '$' + str(round(difference, 2)),
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
             }
+        # Case where player chooses generated value and it yields $100.
+        elif ((self.player.Decision_4 == Constants.random_amount) and (generated_value == 100)) :
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            return {
+                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                'Statement_1' : 'Your drawed amount of',
+                'Random_Number' : '$' + str(generated_value),
+                'Statement_2' : 'is', 
+                'Comparison' : 'equal to',
+                'Statement_3' : 'the constant amount of $100',
+                'Difference' : '',
+                'Total_Income' : '$' + str(round(self.player.Total_Earnings,2))
+            }    
 
 ######################################
 ###### Taking Player Decision 5 ######
@@ -295,30 +535,331 @@ class Results_Questionnaire_COVID_5(Page) :
         generated_value = round(random.uniform(50, 150), 2)
         difference = abs(generated_value - 100)
 
-        # Case where player chooses fixed amount and loses out on chance for generated value.
-        if ((self.player.Decision_5 == Constants.fixed_amount) and (generated_value > 100)) :
-            return {
-                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
-            }
-        # Case where player chooses fixed amount and doesn't lose out on chance for generated value.
-        elif ((self.player.Decision_5 == Constants.fixed_amount) and (generated_value < 100)) :
-            return {
-                'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' would have been less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
-            }
-        # Case where player chooses generated value and wins on chance.
-        elif ((self.player.Decision_5 == Constants.random_amount) and (generated_value > 100)) :
-            return {
-                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
-            }
-        # Case where player chooses generated value and makes loss on chance.
-        elif ((self.player.Decision_5 == Constants.random_amount) and (generated_value < 100)) :
-            return {
-                'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
-                'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
-            }
+        # This variable is intended to account for the difference 
+        # between the total earnings and accumulative fixed earnings of 500.
+        total_difference = 0
+
+        # Ensure that the total earnings are accurately 
+        # updated when the player refreshes the current page.
+        if (self.player.Number_Earnings == 4) :
+            self.player.Previous_Earnings = self.player.Total_Earnings
+            self.player.Number_Earnings = self.player.Number_Earnings + 1   
+
+        # The total earnings must be updated prior to evaluating the final value.
+        if (self.player.Decision_5 == Constants.fixed_amount) :
+            # Case where player chooses fixed amount. 
+            self.player.Total_Earnings = self.player.Previous_Earnings + 100
+            total_difference = abs(self.player.Total_Earnings - 500)
+            # Case where player loses out on chance for generated value but wins on their total earnings.
+            if ((generated_value > 100) and (self.player.Total_Earnings > 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'greater than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'greater than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player loses out on chance for generated value and also loses on their total earnings.
+            elif ((generated_value > 100) and (self.player.Total_Earnings < 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'greater than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'less than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player loses out on chance for generated value and the total earnings are $500.
+            elif ((generated_value > 100) and (self.player.Total_Earnings == 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'greater than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'equal to',
+                    'Statement_B3' : 'the accumulative constant earnings of $500',
+                    'Total_Difference' : ''
+                }
+            # Case where player wins on chance for generated value and also wins on their total earnings.
+            elif ((generated_value < 100) and (self.player.Total_Earnings > 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'less than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'greater than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player wins on chance for generated value but loses on their total earnings.
+            elif ((generated_value < 100) and (self.player.Total_Earnings < 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'less than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'less than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player wins on chance for generated value and the total earnings are $500.
+            elif ((generated_value < 100) and (self.player.Total_Earnings == 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'less than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'equal to',
+                    'Statement_B3' : 'the accumulative constant earnings of $500',
+                    'Total_Difference' : ''
+                }
+            # Case where the generated value would have been $100 but the player wins on their total earnings.
+            elif ((generated_value == 100) and (self.player.Total_Earnings > 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'equal to',
+                    'Statement_A3' : 'the constant amount of $100',
+                    'Difference' : '',
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'greater than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where the generated value would have been $100 but the player loses on their total earnings.
+            elif ((generated_value == 100) and (self.player.Total_Earnings < 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'equal to',
+                    'Statement_A3' : 'the constant amount of $100',
+                    'Difference' : '',
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'less than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where the generated value would have been $100 and the total earnings are $500.
+            elif ((generated_value == 100) and (self.player.Total_Earnings == 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Fixed Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'would have been', 
+                    'Comparison' : 'equal to',
+                    'Statement_A3' : 'the constant amount of $100',
+                    'Difference' : '',
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'equal to',
+                    'Statement_B3' : 'the accumulative constant earnings of $500',
+                    'Total_Difference' : ''
+                }
+        elif (self.player.Decision_5 == Constants.random_amount) :
+            # Case where player chooses generated value.
+            self.player.Total_Earnings = self.player.Previous_Earnings + generated_value
+            total_difference = abs(self.player.Total_Earnings - 500)
+            # Case where player wins on chance for generated value and also wins on their total earnings.
+            if ((generated_value > 100) and (self.player.Total_Earnings > 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'is', 
+                    'Comparison' : 'greater than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'greater than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player wins on chance for generated value but loses on their total earnings.
+            elif ((generated_value > 100) and (self.player.Total_Earnings < 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'is', 
+                    'Comparison' : 'greater than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'less than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player wins on chance for generated value and the total earnings are $500.
+            elif ((generated_value > 100) and (self.player.Total_Earnings == 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'is', 
+                    'Comparison' : 'greater than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'equal to',
+                    'Statement_B3' : 'the accumulative constant earnings of $500',
+                    'Total_Difference' : ''
+                }
+            # Case where player loses on chance for generated value but wins on their total earnings.
+            elif ((generated_value < 100) and (self.player.Total_Earnings > 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'is', 
+                    'Comparison' : 'less than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'greater than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player loses on chance for generated value but loses on their total earnings.
+            elif ((generated_value < 100) and (self.player.Total_Earnings < 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'is', 
+                    'Comparison' : 'less than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'less than',
+                    'Statement_B3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where player loses on chance for generated value and the total earnings are $500.
+            elif ((generated_value < 100) and (self.player.Total_Earnings == 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_A1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_A2' : 'is', 
+                    'Comparison' : 'less than',
+                    'Statement_A3' : 'the constant amount of $100 by',
+                    'Difference' : '$' + str(round(difference, 2)),
+                    'Statement_B1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_B2' : 'are',
+                    'Total_Comparison' : 'equal to',
+                    'Statement_B3' : 'the accumulative constant earnings of $500',
+                    'Total_Difference' : ''
+                }
+            # Case where the generated value is $100 but the player wins on their total earnings.
+            elif ((generated_value == 100) and (self.player.Total_Earnings > 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_1.1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_1.2' : 'is',  
+                    'Comparison' : 'equal to',
+                    'Statement_1.3' : 'the constant amount of $100',
+                    'Difference' : '',
+                    'Statement_2.1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_2.2' : 'are',
+                    'Total_Comparison' : 'greater than',
+                    'Statement_2.3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where the generated value is $100 but the player loses on their total earnings.
+            elif ((generated_value == 100) and (self.player.Total_Earnings < 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_1.1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_1.2' : 'is', 
+                    'Comparison' : 'equal to',
+                    'Statement_1.3' : 'the constant amount of $100',
+                    'Difference' : '',
+                    'Statement_2.1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_2.2' : 'are',
+                    'Total_Comparison' : 'less than',
+                    'Statement_2.3' : 'the accumulative constant earnings of $500 by',
+                    'Total_Difference' : '$' + str(round(total_difference, 2))
+                }
+            # Case where the generated value is $100 and the total earnings are $500.
+            elif ((generated_value == 100) and (self.player.Total_Earnings == 500)) :
+                return {
+                    'Inform' : 'You Have Chosen A Random Amount Instead Of The Constant Amount Of $100.',
+                    'Statement_1.1' : 'Your drawed amount of',
+                    'Random_Number' : '$' + str(generated_value),
+                    'Statement_1.2' : 'is', 
+                    'Comparison' : 'equal to',
+                    'Statement_1.3' : 'the constant amount of $100',
+                    'Difference' : '',
+                    'Statement_2.1' : 'Your total earnings of',
+                    'Total_Income' : '$' + str(round(self.player.Total_Earnings,2)),
+                    'Statement_2.2' : 'are',
+                    'Total_Comparison' : 'equal to',
+                    'Statement_2.3' : 'the accumulative constant earnings of $500',
+                    'Total_Difference' : ''
+                }
 
 class Appreciation(Page) :
     form_model = 'player'

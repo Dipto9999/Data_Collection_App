@@ -5,15 +5,10 @@
     <h1>
         <span class = "block_title">Web Application</span>
     </h1>
-{% endblock %}
+{% endblock title %}
 
 {% block content %}
-    <body>
-        <!-- This image is stored in the _static directory. -->
-        <img src = "{% static "Images/Sunset-Landscape.jpg" %}" id = "landscape"/>
-    </body>
-
-    <!-- This empty paragraph is used to put a space in between the image and heading. -->
+    <!-- This empty paragraph is used to put a space in between the headings. -->
     <p></p>
 
     <h2>
@@ -50,6 +45,8 @@
                             This is designed by Muntakim Rahman of UBC Electrical and Computer Engineering Class of 2022.</br>
                             Click this link to view his <span class = "font-italic">Linkedin</span> profile: 
                             <a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">More About Muntakim.</a>
+                            
+                            <!-- This image is stored in the _static directory. -->
                             <img src = "{% static "Images/Headshot.jpg" %}" class = "align-self-start" id = "headshot"/>
                         </div>
                     </p>  
@@ -68,10 +65,10 @@
             </div>
             
             <!-- The following information is transferred from the models.py file. -->
-            {% formfield player.Name_Initials_Consent label = "Your Initials or First Name" %}
-            {% formfield player.Age_Consent label = "What is your age? You must be 10 or older to partake in this experiment." %}
-            {% formfield player.Email_Consent label = "Email" %}
-            {% formfield player.Contact_Consent label = "Phone Number" %}
+            {% formfield player.Name_Initials_Consent label = "Your <strong>Initials</strong> or <strong>First Name</strong>" %}
+            {% formfield player.Age_Consent label = "What is your <strong>Age?</strong> <mark>(You must be 10 or older to partake in this experiment.)</mark>" %}
+            {% formfield player.Email_Consent label = "<strong>Email</strong> <mark>(Not Required)</mark>" %}
+            {% formfield player.Contact_Consent label = "<strong>Phone Number</strong> <mark>(Not Required)</mark>" %}
         </p>    
     </div>
 
@@ -80,4 +77,4 @@
 
     <!-- Move to next page. -->
     <button class = "next_button" onclick = '{% next_button %}'>Continue ...</button>
-{% endblock %}
+{% endblock content %}

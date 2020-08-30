@@ -5,18 +5,98 @@
     <h1>   
         <span class = "block_title">End of Experiment</span>
     </h1>
-{% endblock %}
+{% endblock title %}
 
 <!-- This is the end of the application. -->>
 {% block content %}
     <div style = "text-align : center;">
         <h2>
             <!-- Use Bootstrap 4 to create a closing alert message. -->
-            <div class = "alert alert-success alert-dismissible">
+            <div class = "alert alert-success alert-dismissible fade show">
                 <button type = "button" class = "close" data-dismiss = "alert">&times;</button>
                 <!-- The following information is transferred from the models.py file. -->
                     Thank You Very Much {{ player.Name_Initials_Consent }}. </br> 
                     This Is The End Of The Experiment.                
             </div>
         </h2>
-{% endblock %}
+    </div>
+
+    <!-- This empty paragraph is used to put a space in between the image and heading. -->
+    <p></p>
+
+    <body>
+        <div id = "demo" class = "carousel slide" data-ride = "carousel">
+            <!-- This is used to indicate how many slides are in the carousel. -->
+            <ul class = "carousel-indicators">
+                <li data-target = "#demo" data-slide-to = "0" class = "active"></li>
+                <li data-target = "#demo" data-slide-to = "1"></li>
+                <li data-target = "#demo" data-slide-to = "2"></li>
+                <li data-target = "#demo" data-slide-to = "3"></li> 
+                <li data-target = "#demo" data-slide-to = "4"></li> 
+                <li data-target = "#demo" data-slide-to = "5"></li>             
+                <li data-target = "#demo" data-slide-to = "6"></li>             
+              </ul>
+
+            <!-- Add slides to the carousel. -->
+            <div class = "carousel-inner">
+                <div class = "carousel-item active">
+                    <!-- These images are stored in the _static directory. -->
+                    <img src = "{% static "Images/Plane-Lighting.jpg" %}" alt = "Window Shot From Plane" class = "carousel_images"/>
+                    <div class = "carousel-caption">
+                        <h3>Window Shot From Plane</h3>
+                        <p style = "color : white">It was my first time in the window seat.</p>
+                    </div>
+                </div>
+
+                <div class = "carousel-item">
+                    <img src = "{% static "Images/Sunset-Landscape.jpg" %}" alt = "Sunset From My Room" class = "carousel_images"/>
+                    <div class = "carousel-caption">
+                        <h3>Sunset From My Room</h3>
+                        <p style = "color : white">I had moved to UBC Residence this summer.</p>
+                    </div>
+                </div>
+
+                <div class = "carousel-item">
+                    <img src = "{% static "Images/Stanley_Park-Landscape.jpg" %}" alt = "Landscape From Stanley Park Entrance" class = "carousel_images"/>
+                    <div class = "carousel-caption">
+                        <h3>Landscape From Stanley Park Entrance</h3>
+                        <p style = "color : white">I returned to Vancouver for my Third Year at UBC.</p>
+                    </div>
+                </div>
+
+                <div class = "carousel-item">
+                    <img src = "{% static "Images/Stanley_Park-Trail.jpg" %}" alt = "Trail In Stanley Park" class = "carousel_images"/>
+                    <div class = "carousel-caption">
+                        <h3>Trail In Stanley Park</h3>
+                        <p style = "color : white">I had started to walk without using a map.</p>
+                    </div>
+                </div>
+
+                <div class = "carousel-item">
+                    <img src = "{% static "Images/Trees-Landscape.jpg" %}" alt = "Stanley Park Landscape With Some Trees" class = "carousel_images"/>
+                    <div class = "carousel-caption">
+                        <h3>Stanley Park Landscape With Some Trees</h3>
+                        <p style = "color : white">I was enjoying the view on this nice day.</p>
+                    </div>
+                </div>
+
+                <div class = "carousel-item">
+                    <img src = "{% static "Images/North_Vancouver-Landscape.jpg" %}" alt = "North Vancouver From Stanley Park" class = "carousel_images"/>
+                    <div class = "carousel-caption">
+                        <h3>North Vancouver From Stanley Park</h3>
+                        <p style = "color : white">This place is very beautiful.</p>
+                    </div>
+                </div>
+
+                <!-- Add a left button to the carousel. -->
+                <a class = "carousel-control-prev" href = "#demo" data-slide = "prev">
+                    <span class = "carousel-control-prev-icon"></span>
+                </a>
+
+                <!-- Add a right button to the carousel. -->
+                <a class = "carousel-control-next" href = "#demo" data-slide = "next">
+                    <span class = "carousel-control-next-icon"></span>
+                </a>
+            </div>
+    </body>
+{% endblock content %}
