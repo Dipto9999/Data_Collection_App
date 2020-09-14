@@ -34,6 +34,7 @@ We will be using the <b>oTree</b> open-source framework to build the survey elem
 <ul>
     <li><a href = "python_basics">Python Basics</a></li>
     <li><a href = "workshop_project">Economics App</a></li>
+    <li><a href = "workshop_AI">AI Simulation</a></li>
 </ul>
 
 ## Credit
