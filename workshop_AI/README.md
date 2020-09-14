@@ -21,10 +21,10 @@ The <b>Python</b> script produces simulation results through calling several <i>
 
 These include :
 <ul>
-    <li>Total Number of "Fixed" Strategies Followed in Each Round</li>
+    <li>Total Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round</li>
     <ul>
-        <li>Number of "Fixed" Strategies Followed in Each Round by "Fixed" Players</li>
-        <li>Number of "Fixed" Strategies Followed in Each Round by "Random" Players</li>
+        <li>Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round by '<b>Fixed</b>' Players</li>
+        <li>Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round by '<b>Random</b>' Players</li>
     </ul>
 </ul>
 
