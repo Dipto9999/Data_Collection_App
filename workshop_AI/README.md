@@ -14,7 +14,7 @@ It was written with the establishment of several assumptions regarding user beha
 <b>Matplotlib Library</b> to generate data visualizations of the simulation results as well as the actual data collected from the deployed app.  
 
 ### Assumptions
-There are players with either of <b>2 Decision Types</b> (i.e. <b>'Fixed'</b>, <b>'Random'</b>). If the <b>Strategy</b> corresponding to their <b>Decision Type</b> provides the players a <b>Profit</b> in the current round of the questionnaire, they continue as before for the next round. However, if they make a <b>Loss</b> from following the default <b>Strategy</b>, they have a chance of temporarily switching their <b>Strategy</b> for the next round in the questionnaire. The original <b>Decision Type</b> of the player doesn't change regardless of the <b>Play Outcome</b> (i.e. <b>Profit</b>,<b>Loss</b>).
+There are players with either of <b>2 Decision Types</b> (i.e. <b>'Fixed'</b>, <b>'Random'</b>). If the <b>Strategy</b> corresponding to their <b>Decision Type</b> provides the players a <b>Profit</b> in the current round of the questionnaire, they continue as before for the next round. However, if they make a <b>Loss</b> from following the default <b>Strategy</b>, they have a chance of temporarily switching their <b>Strategy</b> for the next round in the questionnaire. The original <b>Decision Type</b> of the player doesn't change regardless of the <b>Play Outcome</b> (i.e. <b>Profit</b>, <b>Loss</b>).
 
 ## Python Script
 The <b>Python</b> script produces simulation results through calling several <i>custom functions</i> in a <i>main function</i> to separate the simulation results of interest to our purposes. 
