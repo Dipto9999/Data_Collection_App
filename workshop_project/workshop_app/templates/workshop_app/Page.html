@@ -4,14 +4,25 @@
 {% block scripts %}
 {% endblock scripts %}
 
-<!-- This CSS Script will be included in all pages of the App.-->>
+<!-- This CSS Script will be included in all pages of the App.-->
 {% block app_styles %}
     <style>
         /* This CSS block specifies the styling of the body. */
+        body {
+            background-image: linear-gradient(
+                to bottom right,
+                darkred, red, rgb(212, 90, 90),
+                magenta, rgb(192, 0, 192), 
+                purple, rgb(75, 10, 75)
+            );
+        }
+
+        /* This CSS block specifies the styling of the oTree body. */
         .otree-body {
             border-style : solid;
             border-width : thin;
             border-color : black;
+            background-color: white;
         }
 
         /* This CSS block specifies the styling of the block titles on each page. */

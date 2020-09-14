@@ -55,12 +55,17 @@
                 {{ Statement_A1 }} <mark>{{ Random_Number }}</mark> {{ Statement_A2 }} <mark>{{ Comparison }}</mark> {{ Statement_A3 }}.</br>
             {% endif %}
 
-            <!-- The following information corresponds to the player's total earnings at the end of the experiment. -->
-            {% if Total_Difference != '' %}
-                {{ Statement_B1 }} <mark>{{ Total_Income }}</mark> {{ Statement_B2 }} <mark>{{ Total_Comparison }}</mark> {{ Statement_B3 }} <mark>{{ Total_Difference }}</mark>.</br>
-            {% else %}
-                {{ Statement_B1 }} <mark>{{ Total_Income }}</mark> {{ Statement_B2 }} <mark>{{ Total_Comparison }}</mark> {{ Statement_B3 }}.</br>
-            {% endif %}
+            <!-- This line break acts as a separation between the different information. -->
+            </br>
+
+            <strong>
+                <!-- The following information corresponds to the player's total earnings at the end of the experiment. -->
+                {% if Total_Difference != '' %}
+                    {{ Statement_B1 }} <mark>{{ Total_Income }}</mark> {{ Statement_B2 }} <mark>{{ Total_Comparison }}</mark> {{ Statement_B3 }} <mark>{{ Total_Difference }}</mark>.</br>
+                {% else %}
+                    {{ Statement_B1 }} <mark>{{ Total_Income }}</mark> {{ Statement_B2 }} <mark>{{ Total_Comparison }}</mark> {{ Statement_B3 }}.</br>
+                {% endif %}
+            </strong>
         </p>
     </div>
 
