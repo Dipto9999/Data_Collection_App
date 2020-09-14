@@ -31,7 +31,7 @@ These include :
 ### Simulation Results
 Here is an example of the results derived from the simulation.
 
-<p align="center"><img src="Simulation_Results.JPG" width="60%" height="60%" title="Simulation Results" ></p>
+<p align="center"><img src = "Simulation_Results.jpeg" width = "60%" height = "60%" title = "Simulation Results" ></p>
 
 ## Credit
 Credit should be provided to <b>Simon Frasier University</b> and <b>Professor Farouk Abdul-Salam</b> for providing
