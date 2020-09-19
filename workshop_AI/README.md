@@ -11,10 +11,10 @@
 
 ## Overview
 We used <b>Python</b> to simulate results to the questionnaire in the <b>Web Application</b>.  
-The <a href = "naive_AI.py">naive_AI</a> <b>Python</b> script makes predictions of player behavior. 
+The <a href = "naive_AI.py">Naive AI</a> <b>Python</b> script makes predictions of player behavior. 
 It was written with the establishment of several assumptions regarding user behavior, which are discussed below. The script imports the 
 <b>Matplotlib Library</b> to generate data visualizations of the simulation results as well as the actual data collected from the deployed app.</br>
-We deal with the data imported from the <b>Excel Spreadsheet</b> using the <p>Pandas Library</b> and inputting the information into a <b>DataFrame</b>. 
+We deal with the data imported from the <b>Excel Spreadsheet</b> using the <b>Pandas Library</b> and inputting the information into a <b>DataFrame</b>. 
 <i>For more information on this, see the <a href = "../workshop_data">workshop_data</a> directory.</i>
 
 ### Assumptions
@@ -35,15 +35,15 @@ These include :
 </ul>
 
 ### App Data
-Similarly, we acquire the useful app data from the <a href = "../workshop_data/Relevant_Results.xlsx">Relevant_Results</a> <b>Excel Spreadsheet</b> 
+Similarly, we acquire the useful app data from the <a href = "../workshop_data/Relevant_Results.xlsx">Relevant Results</a> <b>Excel Spreadsheet</b> 
 and analyze the results for purposes. 
 
 These include :
 <ul>
     <li>Total Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round</li>
     <ul>
-        <li>Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round by Quadratic App Users</li>
-        <li>Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round by Investment App Users</li>
+        <li>Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round by <b>Quadratic</b> App Users</li>
+        <li>Number of '<b>Fixed</b>' <b>Strategies</b> Followed in Each Round by <b>Investment</b> App Users</li>
     </ul>
 </ul>
 

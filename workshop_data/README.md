@@ -7,7 +7,7 @@
 * [Credit](#Credit)
 
 ## Overview
-We acquired user data in our deployed <b>Web Application</b> and it provided us with a <a href = "Results_Collected.xlsx">Results Collected</a> <b>Excel Spreadsheet</b>. However, this is hard to read and extract data from. To deal with this, I wrote a <a href = "spreadsheet_organizer.py">Spreadsheet Organizer</a> <b>Python</b> script, which imports the <b>Pandas Library</b> and restructures the useful information from the app results using <b>DataFrames</b>. This labelled data is organized in another <a href = "Relevant_Results.py">Relevant Results</a> <b>Excel Spreadsheet</b> in order to make it easier to display this information alongside our simulation results.
+We acquired user data in our deployed <b>Web Application</b> and it provided us with a <a href = "Results_Collected.xlsx">Results Collected</a> <b>Excel Spreadsheet</b>. However, this is hard to read and extract data from. To deal with this, I wrote a <a href = "spreadsheet_organizer.py">Spreadsheet Organizer</a> <b>Python</b> script, which imports the <b>Pandas Library</b> and restructures the useful information from the app results using <b>DataFrames</b>. This labelled data is organized in another <a href = "Relevant_Results.xlsx">Relevant Results</a> <b>Excel Spreadsheet</b> in order to make it easier to display this information alongside our simulation results.
 
 ## Python Script 
 The knowledge required to complete this organizer was acquired from a prior exploration of the <b>Scikit-Learn Library</b> as well as a corporate <b>XML</b> and <b>Excel</b> organizer I had wrote separately.</br>
