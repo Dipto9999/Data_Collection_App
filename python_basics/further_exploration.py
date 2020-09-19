@@ -28,9 +28,7 @@ def addition_function(parameter_a,parameter_b) :
     return result
 
 # Test if subtrction function working as intended.
-print()
-print ("******CHECK ADDITION FUNCTION******")
-print()
+print ("/n******CHECK ADDITION FUNCTION******/n")
 
 addition_function(1,2)
 
@@ -41,7 +39,7 @@ def subtract_function(parameter_a,parameter_b) :
 
 # Test if subtrction function working as intended.
 print()
-print ("******CHECK SUBTRACTION FUNCTION******")
+print ("/n******CHECK SUBTRACTION FUNCTION******/n")
 print()
 
 subtract_function(1,2)
@@ -60,9 +58,7 @@ def combination_function(parameter_a,parameter_b) :
     return sum_b
 
 # Test if combination function working as intended.
-print()
-print ("****** CHECK COMBINATION FUNCTION ******")
-print()
+print ("/n******CHECK COMBINATION FUNCTION******/n")
 
 combination_function(1,2)
 
@@ -86,9 +82,7 @@ def investment(principal_amount, interest_rate, year) :
     }
     
 # Test if the investment function working as intended.
-print()
-print ("****** CHECK INVESTMENT FUNCTION ******")
-print()
+print ("/n******CHECK INVESTMENT FUNCTION******/n")
 
 print("Investment Outcome of Principal Amount 1000 and Interest Rate 0.5 over 2 Years (Should be Less Interest) : ", investment(1000, 0.5, 2))
 print("Investment Outcome of Principal Amount 1000 and Interest Rate 0.9 over 2 Years (Should be More Interest) : ", investment(1000, 0.9, 2))

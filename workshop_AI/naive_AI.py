@@ -1,7 +1,15 @@
-# Import module random to generate pseudo-random numbers to generate Decision Types and Strategies.
+#############################################################
+########## Import Libraries and Define Assumptions ##########
+#############################################################
+
+# Import Module Random to Generate Decision Types and Strategies.
 import random
-# Import library for data visualization of simulation results and data collected.
+# Import Library for Data Visualization of Simulation Results and App Data.
 import matplotlib.pyplot as plt 
+# Import Library for Working with Numerical Arrays.
+import numpy as np
+# Deal with Tabular Data using Pandas Library.
+import pandas as pd
 
 # There are 2 possible Decision Types of players with equal chance of being generated.
     # The option probabilities should have a sum of 1.
@@ -11,6 +19,59 @@ option_probabilities = [0.5, 0.5]
 # The experiment consists of 3 players that each make 5 decisions.
 number_of_rounds = 5 
 number_of_players = 3
+
+###################################
+######### Acquire App Data ########
+###################################
+
+# Import the user data from the deployed app.
+app_dataframe = pd.read_excel('../workshop_data/Relevant_Results.xlsx')
+print('User Data Collected: \n', app_dataframe)
+
+# Organize user data from Excel Spreadsheet into individual series.
+user_details_series = app_dataframe['Player Details']
+user_app_choice_series = app_dataframe['App Choice']
+user_round_1_series = app_dataframe['Round 1']
+user_round_1_series = app_dataframe['Round 2']
+user_round_1_series = app_dataframe['Round 3']
+user_round_1_series = app_dataframe['Round 4']
+user_round_1_series = app_dataframe['Round 5']
+
+# Initialize empty lists to input relevant data for graphics at end of script.
+number_of_fixed_strategies_all_users = []
+number_of_fixed_strategies_quadratic = []
+number_of_fixed_strategies_investment = []
+
+# Learn about the user data in terms of their 'Fixed' Strategies and app choice.
+for round in range(number_of_rounds) :
+    fixed_strategies_all_users_in_round = 0
+    fixed_strategies_quadratic_in_round = 0
+    fixed_strategies_investment_in_round = 0
+    for user in range(len(app_dataframe.index)) :
+        
+        # Note the numerical values corresponding to the app choice and 'Fixed' or 'Random' Strategies 
+        # correspond to what is defined in the app models.py script. These may differ from the numerical 
+        # values used for our calculations in the AI simulation later on in this script.
+
+        # Case in which user decides to earn a fixed amount (constant defined in models.py).
+        if (app_dataframe['Round ' + str(round + 1)][user] == 0) :
+                fixed_strategies_all_users_in_round += 1
+                # Case in which user had decided to test quadratic app (constant defined in models.py).
+                if (app_dataframe['App Choice'][user] == 0) :
+                    fixed_strategies_quadratic_in_round += 1
+                # Case in which user had decided to test investment app (constant defined in models.py).
+                elif (app_dataframe['App Choice'][user] == 1) :
+                    fixed_strategies_investment_in_round += 1
+    # Append data involving 'Fixed' Strategies from each round to the list for the App Data. 
+    number_of_fixed_strategies_all_users.append(fixed_strategies_all_users_in_round)
+    number_of_fixed_strategies_quadratic.append(fixed_strategies_quadratic_in_round)
+    number_of_fixed_strategies_investment.append(fixed_strategies_investment_in_round)
+
+print("\n******APP DATA******\n")
+
+print('"Fixed" Strategies Followed By All Users : ', number_of_fixed_strategies_all_users)
+print('"Fixed" Strategies Followed By Quadratic App Users : ', number_of_fixed_strategies_quadratic)
+print('"Fixed" Strategies Followed By Investment App Users : ', number_of_fixed_strategies_investment)
 
 #################################################
 ########### Generate Decision Types #############
@@ -138,7 +199,7 @@ def strategiesFollowed(expectations_strategies) :
     ## The following line is commented out -> used for debugging custom function.
     ## print('Generate Strategy Deciders : ', strategy_deciders)
 
-    # Cycle through the strategies based on the generated Strategy deciders.
+    # Cycle through the Strategies based on the generated Strategy deciders.
     cumulative_probability = 0.0
     for index in range(len(expectations_strategies)) :
 
@@ -146,25 +207,16 @@ def strategiesFollowed(expectations_strategies) :
         ## print('Current Strategy Decider : ', strategy_deciders[index])
 
         for strategy_and_probability in expectations_strategies[index] :
-            if (index == 0) :
-                cumulative_probability += strategy_and_probability[1]
-
-                ## The following lines are commented out -> used for debugging custom function.
-                ## print('Cumulative Probability : ', cumulative_probability)
-                ## print('Current Strategy : ', strategy_and_probability[0])
-
-                # Break loop when the cumulative_probability is greater than the Strategy decider.
-                if (strategy_deciders[index] < cumulative_probability) : break    
-            else :
+            if (index != 0) :
                 cumulative_probability = 0.0
-                cumulative_probability += strategy_and_probability[1]
+            cumulative_probability += strategy_and_probability[1]
 
-                ## The following lines are commented out -> used for debugging custom function.
-                ## print('Cumulative Probability : ', cumulative_probability)
-                ## print('Current Strategy : ', strategy_and_probability[0])
+            ## The following lines are commented out -> used for debugging custom function.
+            ## print('Cumulative Probability : ', cumulative_probability)
+            ## print('Current Strategy : ', strategy_and_probability[0])
 
-                # Break loop when the cumulative_probability is greater than the Strategy decider.
-                if (strategy_deciders[index] < cumulative_probability) : break    
+            # Break loop when the cumulative_probability is greater than the Strategy decider.
+            if (strategy_deciders[index] < cumulative_probability) : break      
         strategies_followed.append(strategy_and_probability[0])
     return strategies_followed
 
@@ -248,9 +300,9 @@ def countFixedAndRandomStrategiesFollowed(players) :
             number_of_fixed_strategies_followed += 1
     return strategies_followed, number_of_fixed_strategies_followed
 
-###########################
-###### Main Function ######
-###########################
+########################################
+###### Main Function (Simulation) ######
+########################################
 
 def simulationAI (type_options, option_probabilities, number_of_players, number_of_rounds) :
     # Generate the specified number of players.
@@ -334,9 +386,7 @@ def simulationAI (type_options, option_probabilities, number_of_players, number_
 
 results_number_of_fixed_strategies_followed, results_number_of_fixed_strategies_followed_by_fixed_players, results_number_of_fixed_strategies_followed_by_random_players = simulationAI (type_options, option_probabilities, number_of_players, number_of_rounds)
 
-print()
-print ("******SIMULATION RESULTS******")
-print()
+print("\n******SIMULATION RESULTS******\n")
 
 print('Number of "Fixed" Strategies Followed in Each Round : ', results_number_of_fixed_strategies_followed)
 print('Number of "Fixed" Strategies Followed by "Fixed" Decision Type Players in Each Round : ', results_number_of_fixed_strategies_followed_by_fixed_players)
@@ -346,24 +396,67 @@ print('Number of "Fixed" Strategies Followed by "Random" Decision Type Players i
 ###### Graph Results ######
 ###########################
 
-rounds = []
-for round in range(number_of_rounds) :
-    rounds.append(round + 1)
+index = np.arange(number_of_rounds)
+rounds = [str(index[i] + 1) for i in range(len(index))]
 
-print("Rounds : ", rounds)
+## The following line is commented out -> used for debugging list.    
+## print(rounds)
 
-plt.plot(rounds, results_number_of_fixed_strategies_followed, label = 'All Players in Simulation')
+# Create a subplot for the Simulation Results.
+plt.subplot(2, 1, 1)
+
+# Create a barplot with the different Simulation Results identified by a legend.
+simulation_graph = plt.bar(index + 0.00, results_number_of_fixed_strategies_followed, color = "blue", width = 0.25, label = 'All Players in Simulation')
+simulation_graph += plt.bar(index + 0.25, results_number_of_fixed_strategies_followed_by_fixed_players, color = "red", width = 0.25, label = '"Fixed" Decision Type Players in Simulation')
+simulation_graph += plt.bar(index + 0.50, results_number_of_fixed_strategies_followed_by_random_players, color = "green", width = 0.25, label = '"Random" Decision Type Players in Simulation')
+
+# Specify the tick markings, ensuring only integers are displayed on y-axis.
+integer_markings = range(0, number_of_players + 1)
+plt.xticks(index, rounds)
+plt.yticks(integer_markings)
+
+plt.title('Simulation Results and App Data')
+
+# Place legend to the right of the plot.
+plt.legend(fontsize = 7.5, loc = 'upper right', borderaxespad = 0.)
+
+# Create a subplot for App Data.
+plt.subplot(2, 1, 2)
+
+# Create a barplot with the App Data identified by a legend.
+user_data = plt.bar(index + 0.00, number_of_fixed_strategies_all_users, color = "black", width = 0.25, label = 'All App Users')
+user_data += plt.bar(index + 0.25, number_of_fixed_strategies_investment, color = "orange", width = 0.25, label = 'Investment App Users')
+user_data += plt.bar(index + 0.50, number_of_fixed_strategies_quadratic, color = "purple", width = 0.25, label = 'Quadratic App Users')
+
+# Specify the x-axis label.
 plt.xlabel('Round #')
-plt.ylabel('Number of "Fixed" Strategies Followed')
 
-plt.plot(rounds, results_number_of_fixed_strategies_followed_by_fixed_players, label = 'Fixed" Decision Type Players in Simulation')
-plt.xlabel('Round #')
-plt.ylabel('Number of "Fixed" Strategies Followed')
+y_label = ''
+# Shift the y label to account for both subplots.
+for i in range(number_of_players + 1) :
+    for j in range(number_of_players + 1) :
+        for k in range(int(0.75 * (number_of_players + 1))) :
+            y_label += ' '
+y_label += 'Number of "Fixed" Strategies Followed'
 
-plt.plot(rounds, results_number_of_fixed_strategies_followed_by_random_players, label = '"Random" Decision Type Players in Simulation')
-plt.xlabel('Round #')
-plt.ylabel('Number of "Fixed" Strategies Followed')
+# Specify the y-axis label.
+plt.ylabel(y_label)
 
-plt.title('Simulation Results')
-plt.legend()
+# Specify the tick markings, ensuring only integers are displayed on y-axis.
+integer_markings = range(0, number_of_players + 1)
+plt.xticks(index, rounds)
+plt.yticks(integer_markings)
+
+# Place legend to the right of the plot.
+plt.legend(fontsize = 7.5, loc = 'upper right', borderaxespad = 0.)
+
+# Thank the users for their involvement in this experiment.
+print("\n******TO APP USERS******\n")
+for user in range(len(user_details_series.index)) : 
+    message = 'Thank You ' + user_details_series[user] + '.'
+    print(message)
+print('End of Experiment')
+
 plt.show()
+
+
