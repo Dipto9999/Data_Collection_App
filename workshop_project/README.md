@@ -96,7 +96,7 @@ The following commands were run using <b>Windows Powershell</b> in the <a href =
 
 ## Deploy App
 The following commands were run using <b>Windows Powershell</b> in the 
-<a href = "https://github.com/Dipto9999/Data_Collection_App/tree/master/workshop_project">generated app</a> directory :
+<a href = "https://github.com/Dipto9999/Data_Collection_App/tree/master/workshop_project">workshop project</a> directory :
 
 <ul>
     <li><i>heroku login -i</i> to provide <b>Heroku</b> login details to the terminal.</li>
