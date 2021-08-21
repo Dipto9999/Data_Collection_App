@@ -11,17 +11,17 @@
 
 ## Overview
 This folder was generated with the necessary components to develop the app with the use of <b>oTree</b> and <b>Django</b> frameworks.</br>
-The app is hosted on the cloud using the free version of the <b>Heroku</b> platform. 
+The app is hosted on the cloud using the free version of the <b>Heroku</b> platform.
 
 ### Data Acquisition
 The app is capable of acquiring user input from 3 individuals. Each individual is asked whether they wish to</br>
-receive a fixed earning (i.e. <i>$100</i>) or a randomly decided earning (i.e. <i>between $50 and $150</i>) a number of 5 times. 
+receive a fixed earning (i.e. <i>$100</i>) or a randomly decided earning (i.e. <i>between $50 and $150</i>) a number of 5 times.
 
 The following single-use links can be used to provide user data :
 <ul>
-    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/ntdhqnbv">Individual 1</a></li>    
-    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/46vi4ifh">Individual 2</a></li>
-    <li><a href = "https://economics-app-muntakim.herokuapp.com/InitializeParticipant/dmunver3">Individual 3</a></li>
+    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/wc7zhq68">Individual 1</a></li>
+    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/r02wofgj">Individual 2</a></li>
+    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/wnt340iu">Individual 3</a></li>
 </ul>
 
 #### Decisions
@@ -49,13 +49,13 @@ def vars_for_template(self) :
     elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value > 100)) :
         return {
             'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
-            'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'                
+            'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is greater than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
         }
     # Case where player chooses generated value and makes loss on chance.
     elif ((self.player.Decision_1 == Constants.random_amount) and (generated_value < 100)) :
         return {
             'Inform' : 'You have chosen a random amount instead of the constant amount of $100.',
-            'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'               
+            'Random_Number' : 'Your drawed amount of $' + str(generated_value) + ' is less than the constant amount of $100 by $' + str(round(difference, 2)) + '.'
         }
 ```
 
@@ -63,7 +63,7 @@ def vars_for_template(self) :
 Similarly, the type of advertisment to display to the individual is determined by the <i>Custom Function</i> in the Input_Quadratic and Input_Investment <i>Classes</i>, found in the <a href = "workshop_app/pages.py">Pages</a> script. The <i>Strings</i> returned are displayed on the <b>HTML</b> files of the same name as the <i>Class</i>. The user data is stored in the Education and Concern <i>Form Fields</i> in the Player <i>Class</i>, found in the <a href = "workshop_app/models.py">Models</a> script. The <i>Custom Function</i> for this process is shown below :
 
 ```python
-# Function advertises a job for economics students looking for work and 
+# Function advertises a job for economics students looking for work and
 # face masks for individuals worried about their health.
 def vars_for_template(self) :
     # Advertise job fair for economics students worried about finding a job.
@@ -95,7 +95,7 @@ The following commands were run using <b>Windows Powershell</b> in the <a href =
 </ul>
 
 ## Deploy App
-The following commands were run using <b>Windows Powershell</b> in the 
+The following commands were run using <b>Windows Powershell</b> in the
 <a href = "https://github.com/Dipto9999/Data_Collection_App/tree/master/workshop_project">workshop project</a> directory :
 
 <ul>
@@ -133,5 +133,5 @@ The following commands were run using <b>Windows Powershell</b> in the
 
 ## Credit
 Credit should be provided to <b>Simon Frasier University</b> and <b>Professor Farouk Abdul-Salam</b> for providing
-insight into the usage of these tools to create and deploy the app. This was completed as part of an 
+insight into the usage of these tools to create and deploy the app. This was completed as part of an
 <a href = "https://sites.google.com/view/farouk-abdul-salam/my-teaching-workshop/workshop?authuser=0">Online Workshop</a>.
