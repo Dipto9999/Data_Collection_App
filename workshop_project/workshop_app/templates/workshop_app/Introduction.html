@@ -30,30 +30,30 @@
                 <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%"></div>
             </div>
         </p>
-    </div> 
-    
+    </div>
+
     <!-- This empty paragraph is used to put a space in between the progress bar and author information. -->
     <p></p>
 
     <!-- A bit of information about the author. -->
-    <div id = "about_author">   
+    <div id = "about_author">
         <div class = "container">
             <div class = "border border-dark">
                 <div class = "media border p-3">
-                    <p> 
+                    <p>
                         <div class = "media-body">
                             This is designed by Muntakim Rahman of UBC Electrical and Computer Engineering Class of 2022.</br>
-                            Click this link to view his <u><a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">Linkedin</a></u> profile: 
-                            
+                            Click this link to view his <u><a href = "https://www.linkedin.com/in/muntakim-rahman/" target = "_blank">Linkedin</a></u> profile:
+
                             <!-- This image is stored in the _static directory. -->
                             <img src = "{% static "Images/Headshot.jpg" %}" class = "align-self-start" id = "headshot"/>
                         </div>
-                    </p>  
+                    </p>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
-       
+
     <!-- This empty paragraph is used to put a space in between the author information and user fields. -->
     <p></p>
 
@@ -62,13 +62,13 @@
             <div class = "alert alert-primary">
                 Please Provide Following Details To Indicate Your Consent To Participate In This Research :
             </div>
-            
+
             <!-- The following information is transferred from the models.py file. -->
-            {% formfield player.Name_Initials_Consent label = "Your <strong>Initials</strong> or <strong>First Name</strong>" %}
-            {% formfield player.Age_Consent label = "What is your <strong>Age?</strong> <mark>(You must be 10 or older to partake in this experiment.)</mark>" %}
-            {% formfield player.Email_Consent label = "<strong>Email</strong> <mark>(Not Required)</mark>" %}
-            {% formfield player.Contact_Consent label = "<strong>Phone Number</strong> <mark>(Not Required)</mark>" %}
-        </p>    
+            {% formfield player.Name_Initials_Consent label="Your <strong>Initials</strong> or <strong>First Name</strong>" %}
+            {% formfield player.Age_Consent label="What is your <strong>Age?</strong> <mark>(You must be 10 or older to partake in this experiment.)</mark>" %}
+            {% formfield player.Email_Consent label="<strong>Email</strong> <mark>(Not Required)</mark>" %}
+            {% formfield player.Contact_Consent label="<strong>Phone Number</strong> <mark>(Not Required)</mark>" %}
+        </p>
     </div>
 
     <!-- This empty paragraph is used to put a space in between the text and button. -->
