@@ -27,21 +27,21 @@
                 <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%"></div>
             </div>
         </p>
-    </div>  
-    
+    </div>
+
     <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
     <p></p>
-    
+
     <div class = "regular_block">
         <p>
             <div class = "alert alert-primary">
                 <!-- The following information is transferred from the models.py file. -->
                 Hello <strong>{{ player.Name_Initials_Consent }}</strong>. Please Provide The Following Details :
             </div>
-            
-                {% formfield player.App_Choice label = "What type of <strong>computation</strong> do you wish to make? " %}
-                {% formfield player.Education label = "What is your <strong>educational background</strong>? " %}
-                {% formfield player.Concern label = "What is your current <strong>concern</strong> in this COVID-19 period? " %}
+
+                {% formfield player.App_Choice label="What type of <strong>computation</strong> do you wish to make? " %}
+                {% formfield player.Education label="What is your <strong>educational background</strong>? " %}
+                {% formfield player.Concern label="What is your current <strong>concern</strong> in this COVID-19 period? " %}
         </p>
     </div>
 

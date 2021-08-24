@@ -19,9 +19,9 @@ receive a fixed earning (i.e. <i>$100</i>) or a randomly decided earning (i.e. <
 
 The following single-use links can be used to provide user data :
 <ul>
-    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/qbwjhg2h">Individual 1</a></li>
-    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/6g89nwwf">Individual 2</a></li>
-    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/8hszlujg">Individual 3</a></li>
+    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/r8q0od9u">Individual 1</a></li>
+    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/wck98xey">Individual 2</a></li>
+    <li><a href = "https://economics-app-dipto9999.herokuapp.com/InitializeParticipant/kdfzm3mg">Individual 3</a></li>
 </ul>
 
 #### Decisions

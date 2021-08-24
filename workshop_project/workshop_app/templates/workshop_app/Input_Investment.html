@@ -33,20 +33,20 @@
                 <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%"></div>
             </div>
         </p>
-    </div>  
-    
+    </div>
+
     <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
     <p></p>
-        
+
     <div class = "regular_block">
         <p>
             <div class = "alert alert-primary">
                 <strong>{{ player.Name_Initials_Consent }}</strong>, Please Provide Details Regarding Your Investment Plan :</br>
             </div>
-            
-                {% formfield player.Principal_Amount label = "What is the amount you wish to invest? " %}
-                {% formfield player.Interest_Rate label = "What is the market interest rate in decimals (i.e. 5% translates to 0.05)? " %}
-                {% formfield player.Maturity_Period label = "How many years do you wish to invest for? " %}
+
+                {% formfield player.Principal_Amount label="What is the amount you wish to invest? " %}
+                {% formfield player.Interest_Rate label="What is the market interest rate in decimals (i.e. 5% translates to 0.05)? " %}
+                {% formfield player.Maturity_Period label="How many years do you wish to invest for? " %}
         </p>
     </div>
 

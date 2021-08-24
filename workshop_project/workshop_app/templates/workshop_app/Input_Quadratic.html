@@ -33,24 +33,24 @@
                 <div class = "progress-bar bg-success progress-bar-striped progress-bar-animated" style = "width : 0%"></div>
             </div>
         </p>
-    </div>  
-    
+    </div>
+
     <!-- This empty paragraph is used to put a space in between the progress bar and user fields. -->
     <p></p>
 
     <div class = "regular_block">
-        <p> 
+        <p>
             <div class = "alert alert-primary">
                 <strong>{{ player.Name_Initials_Consent }}</strong>, Please Provide The Following Details To Describe Your Quadratic Expression :</br>
-            </div>     
+            </div>
 
             <div class="alert alert-info" style = "text-align : center;">
                 Standard Quadratic Equation : <strong>A*(x^2) + B*(x) + C</strong>
             </div>
 
-                {% formfield player.A_Coefficient label = "What is the coefficient A in front of x^2? " %}
-                {% formfield player.B_Coefficient label = "What is coefficient B in front of x? " %}
-                {% formfield player.C_Coefficient label = "What is the constant C? " %}
+                {% formfield player.A_Coefficient label="What is the coefficient A in front of x^2? " %}
+                {% formfield player.B_Coefficient label="What is coefficient B in front of x? " %}
+                {% formfield player.C_Coefficient label="What is the constant C? " %}
         </p>
     </div>
 
