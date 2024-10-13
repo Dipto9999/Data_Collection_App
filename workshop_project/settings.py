@@ -1,5 +1,8 @@
 from os import environ
 
+# Disable debug mode for production
+DEBUG = False
+
 SESSION_CONFIGS = [
     dict(
         name='workshop_app',
