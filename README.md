@@ -26,7 +26,7 @@ We will be using the <b>oTree</b> open-source framework to build the survey elem
         <ul>
             <li>The <a href = "workshop_project/Procfile">`Procfile`</a> tells the platform how to start the server process.</li>
             <li>The <a href = "workshop_project/runtime.txt">`runtime.txt`</a> file specifies the <b>Python</b> version.</li>
-            <li>The <a href = "workshop_project/requirements_base.txt">`requirements.txt`</a> file specifies the <b>Python</b> package versions.</li>
+            <li>The <a href = "workshop_project/requirements.txt">`requirements.txt`</a> file specifies the <b>Python</b> package versions.</li>
         </ul>
     </li>
 </ul>
