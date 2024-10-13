@@ -4,6 +4,7 @@
 * [Overview](#Overview)
 * [App Modification](#App-Modifications)
 * [Individual Sections](#Individual-Sections)
+* [Demonstration](#Demonstration)
 * [Credit](#Credit)
 
 ## Overview
@@ -40,6 +41,12 @@ The app is hosted at the following <a href = "https://datacollectionapp-producti
     <li><a href = "workshop_data">Data Collection</a></li>
     <li><a href = "workshop_AI">AI Simulation and Graphical Analysis</a></li>
 </ul>
+
+## Demonstration
+
+I have uploaded the Final Demo on [Youtube](https://www.youtube.com/watch?v=v5BKOoV6Blw) and have embedded a low resolution compressed version below.
+
+https://github.com/user-attachments/assets/ec3c2d3c-be38-4168-b52c-352d6e19c33a
 
 ## Credit
 Credit should be provided to <b>Simon Frasier University</b> and <b>Professor Farouk Abdul-Salam</b> for providing
