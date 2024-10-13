@@ -1,0 +1,5 @@
+{
+    "build": {
+      "workingDirectory": "workshop_project"
+    }
+  }
