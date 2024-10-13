@@ -1,5 +1,6 @@
 {
     "build": {
-      "workingDirectory": "workshop_project"
+      "workingDirectory": "workshop_project",
+      "builder": "python"
     }
   }
