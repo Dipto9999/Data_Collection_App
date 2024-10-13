@@ -1,17 +1,19 @@
-# Economics App
+# oTree Application
 
 ## Contents
 * [Overview](#Overview)
     * [Data Acquisition](#Data-Acquisition)
         * [Decisions](#Decisions)
         * [Advertisements](#Advertisements)
-* [Create App](#Create-App)
-* [Deploy App](#Deploy-App)
+* [Build App](#Build-App)
+* [Deployment Platforms](#Deployment-Platforms)
+    * [Heroku](#Heroku)
+    * [Railway](#Railway)
 * [Credit](#Credit)
 
 ## Overview
 This folder was generated with the necessary components to develop the app with the use of <b>oTree</b> and <b>Django</b> frameworks.</br>
-The app is hosted on the cloud using the free version of the <b>Heroku</b> platform.
+The app was originally hosted on the cloud using the free version of the <b>Heroku</b> platform. This has since been migrated to <b>Railway</b>.
 
 ### Data Acquisition
 The app is capable of acquiring user input from 3 individuals. Each individual is asked whether they wish to</br>
@@ -74,11 +76,11 @@ def vars_for_template(self) :
         return {'Advert' : 'We Have Face Masks Available For Purchase.'}
 ```
 
-## Create App
+## Build App
 The following commands were run using <b>Windows Powershell</b> in the <a href = "https://github.com/Dipto9999/Data_Collection_App">Head</a> directory :
 <ul>
     <li>
-        <i>otree startproject workshop_project</i> to create the project and Settings file.
+        <i>otree startproject workshop_project</i> to build the project and Settings file.
         <ul>
             <li><i>n</i> when asked to include sample games.</li>
         </ul>
@@ -94,7 +96,10 @@ The following commands were run using <b>Windows Powershell</b> in the <a href =
     </li>
 </ul>
 
-## Deploy App
+## Deployment Platforms
+
+### Heroku
+
 The following commands were run using <b>Windows Powershell</b> in the
 <a href = "https://github.com/Dipto9999/Data_Collection_App/tree/master/workshop_project">workshop project</a> directory :
 
@@ -131,7 +136,17 @@ The following commands were run using <b>Windows Powershell</b> in the
     <li><i>heroku open</i> to open the <b>Heroku</b> server on your web browser.</li>
 </ul>
 
+### Railway
+
+Since <b>Heroku</b> removed the free version of their platform, this was migrated to <b>Railway</b> and can be viewed at the following [project link](https://railway.app/project/2b1fb326-de9e-4d25-b02b-a03504509acd).
+
+<div align="center">
+    <img src="figures/railway_usage.jpg" width=650 height=300 title="Railway CPU & Memory Usage">
+</div>
+
+Since resource utilization is very low, we were able to leverage the free trial of this platform.
+
 ## Credit
 Credit should be provided to <b>Simon Frasier University</b> and <b>Professor Farouk Abdul-Salam</b> for providing
-insight into the usage of these tools to create and deploy the app. This was completed as part of an
+insight into the usage of these tools to build and deploy the app. This is originally created as part of an
 <a href = "https://sites.google.com/view/farouk-abdul-salam/my-teaching-workshop/workshop?authuser=0">Online Workshop</a>.
