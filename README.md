@@ -7,7 +7,7 @@
 * [Credit](#Credit)
 
 ## Overview
-Build <b>Web Application</b> driven by <b>Python</b> to collect user data and make economic decisions.</br>
+Build <b>Python Web App</b> to collect user data and make economic decisions.</br>
 We will be using the <b>oTree</b> open-source framework to build the survey elements of the app.
 
 ## App Modifications
