@@ -19,13 +19,13 @@ The app was originally hosted on the cloud using the free version of the <b>Hero
 The app is capable of acquiring user input from 3 participants. Each participant is asked whether they wish to</br>
 receive a fixed earning (i.e. <i>$100</i>) or a randomly decided earning (i.e. <i>between $50 and $150</i>) a number of 5 times.
 
-The following session-wide <a href = "http://datacollectionapp-production.up.railway.app/join/havotavu">demo link</a> can be used to access the application.
+The following session-wide <a href = "http://datacollectionapp-production.up.railway.app/join/vidokibi">demo link</a> can be used to access the application.
 
 The following single-use links can be used to provide user data :
 <ul>
-    <li><a href = "http://datacollectionapp-production.up.railway.app/InitializeParticipant/hotbae0v">Participant 1</a></li>
-    <li><a href = "http://datacollectionapp-production.up.railway.app/InitializeParticipant/z7wyj8q8">Participant 2</a></li>
-    <li><a href = "http://datacollectionapp-production.up.railway.app/InitializeParticipant/u6h2yegv">Participant 3</a></li>
+    <li><a href = "http://datacollectionapp-production.up.railway.app/InitializeParticipant/jcc5s438">Participant 1</a></li>
+    <li><a href = "http://datacollectionapp-production.up.railway.app/InitializeParticipant/a0576qcb">Participant 2</a></li>
+    <li><a href = http://datacollectionapp-production.up.railway.app/InitializeParticipant/54f30094">Participant 3</a></li>
 </ul>
 
 #### Decisions
