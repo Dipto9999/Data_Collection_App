@@ -11,7 +11,7 @@
 Build <b>Python Web App</b> to collect user data and make economic decisions.</br>
 We will be using the <b>oTree</b> open-source framework to build the survey elements of the app.
 
-The app is hosted at the following <a href = "https://datacollectionapp-production.up.railway.app/">link</a> and can be used to provide demo data.
+The app is hosted at the following <a href = "https://data-collection-app-c0k5.onrender.com/">link</a> and can be used to provide demo data.
 
 ## App Modifications
 <ul>
@@ -25,7 +25,7 @@ The app is hosted at the following <a href = "https://datacollectionapp-producti
         </ul>
     </li>
     <li>
-        The files for building and deploying the hosted app on the <b>Heroku</b> and <b>Railway</b> platforms.
+        The files for building and deploying the hosted app on the current platform.
         <ul>
             <li>The <a href = "workshop_project/Procfile">`Procfile`</a> tells the platform how to start the server process.</li>
             <li>The <a href = "workshop_project/runtime.txt">`runtime.txt`</a> file specifies the <b>Python</b> version.</li>

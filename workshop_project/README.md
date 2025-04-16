@@ -9,11 +9,12 @@
 * [Deployment Platforms](#Deployment-Platforms)
     * [Heroku](#Heroku)
     * [Railway](#Railway)
+    * [Render](#Render)
 * [Credit](#Credit)
 
 ## Overview
 This folder was generated with the necessary components to develop the app with the use of <b>oTree</b> and <b>Django</b> frameworks.</br>
-The app was originally hosted on the cloud using the free version of the <b>Heroku</b> platform. This has since been migrated to <b>Railway</b>.
+The app was originally hosted on the cloud using the free version of the <b>Heroku</b> and <b>Railway</b> platforms. This has since been migrated to <b>Render</b>.
 
 ### Data Acquisition
 The app is capable of acquiring user input from 3 participants. Each participant is asked whether they wish to</br>
@@ -131,13 +132,22 @@ The following commands were run using <b>Windows Powershell</b> in the
 
 ### Railway
 
-Since <b>Heroku</b> removed the free version of their platform, this was migrated to <b>Railway</b> and can be viewed at the following [project link](https://railway.app/project/2b1fb326-de9e-4d25-b02b-a03504509acd).
+Since <b>Heroku</b> removed the free version of their platform, this was migrated to <b>Railway</b>.
 
 <div align="center">
     <img src="figures/railway_usage.jpg" width=650 height=300 title="Railway CPU & Memory Usage">
 </div>
 
 Since resource utilization is very low, we were able to leverage the free trial of this platform.
+
+### Render
+
+<b>Railway</b> has since removed my free credits. I have migrated this application to the <b>Render</b> Platform and can be viewed at the following [project link](https://data-collection-app-c0k5.onrender.com/).
+I am expecting cold starts to occur when accessed. Based off the recurring trend, this may become stale as well after a period of time.
+
+<div align="center">
+    <img src="figures/render_deployment.jpg" width=650 height=300 title="Render Deployment">
+</div>
 
 ## Credit
 Credit should be provided to <b>Simon Frasier University</b> and <b>Professor Farouk Abdul-Salam</b> for providing
